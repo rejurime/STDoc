@@ -1,0 +1,45 @@
+<template>
+<render type="package">
+	<template>
+		<text>
+		<![CDATA[
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="template1.css">
+<title>Package %PACKAGENAME%</title>
+</head>
+
+<body>
+</script>
+<table border="1" width="100%%" class="classHeader">
+  <tr>
+    <td width="100%%" class="classHeaderTD">
+      <span class="classHeaderName">%PACKAGENAME%</span></td>
+  </tr>
+</table>
+<hr />
+
+<p>%PACKAGECOMMENT%</p>
+
+<h4 class="dtH4">Package dependencies</h4>
+<p>%PACKAGEDEPENDENCIES:dtTABLE:dtTABLETD%</p>
+
+<h4 class="dtH4">Package dependents</h4>
+<p>%PACKAGEDEPENDENTS:dtTABLE:dtTABLETD%</p>
+
+<h4 class="dtH4">Classes</h4>
+<p>%PACKAGECLASSES:dtTABLE:dtTABLETD%</p>
+
+<hr>
+ <span class="smallCentered">
+  %LABEL:COPYRIGHT%<br>
+  Generated on %LABEL:TIMESTAMP% by Smalltalk DOC
+ </span>
+</body>
+</html>
+		]]>
+		</text>
+	</template>
+</render>
+</template>

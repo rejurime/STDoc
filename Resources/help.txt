@@ -1,0 +1,90 @@
+The xml document for the template starts with the tag <template>.
+It can have two types of tags inside <text> tags and <render> tags.
+
+TEXT TAG
+==== ===
+The text tag are used to enter plain text. This text is directly rendered
+on the output document as is.
+
+Example 1. Text tag:
+<template>
+<text>This is some text</text>
+</template>
+
+
+RENDER TAG
+====== ===
+Render tags use specific renderers to render dinamic information in the output file.
+There are currently three types of renderers, DOCClassRenderer that renders class specific information, DOCMethodRenderer that renders method information in a certain way and finally DOCVariableRenderer that renders variable information.
+
+The render tags contain two tags inside the first one is the template tag, that shows how to render the information, the second type of tag is the render tag, render tags can contain child render tags that are rendered on demand by the template.
+
+The template tag, inside the render tag, contains text plus some commands that are enclose between % (percentage) symbols, such as %METHODNAME% for the DOCMethodRenderer.
+
+
+CHILD RENDERERS
+===== =========
+The render tag can contain definitions for other renderers.
+The command that renders a child is %CHILDRENDER:renderId% that recives the id of the child renderer.
+The child renderer renders all the objects of the class that involves it. For example if it is a DOCVariableRenderer, when you call it with CHILDRENDER it will render all the variables of the class.
+
+Example 2. Sample render tag with child render
+<template>
+<render type="DOCClassRenderer" id="classRender">
+	<template>
+		Class named %CLASSNAME%<br />
+		Instances variables for class: %CHILDRENDER:varRender%
+	</template>
+	<render id="varRender" type="DOCVariableRenderer" varType="ALL">
+		<template>%VARNAME</template>
+	</render>
+</render>
+</template>
+
+
+DOCClassRenderer RENDERER
+================ ========
+Renders once per class.
+It has the following attributes:
+- 
+
+It has the following commands:
+- %CLASSID% -> Prints the class name without any decoration
+- %CLASSNAME% -> Prints the class name
+- %CLASSDEFINITION% -> Prints the class definition code
+- %CLASSPACKAGE% -> Renders the class package name
+- %CLASSSUPERCLASSES% -> Renders the class superclass tree
+- %CLASSSUPERCLASS% -> Renders the super class name
+- %CLASSCOMMENT% -> Prints the class comment
+- %CLASSHIERARCHY% -> Renders a tree with the superclasses the current class and the subclasses
+
+
+DOCMethodRenderer  RENDERER
+================= ========
+Renders once per method of the class, depending on the method type selected.
+It has the following attributes:
+- methodType: This attribute specifies wich kind of method to render. It can be 'INST' for instance methods 'CLASS' for class methods or 'ALL' for both kinds.
+
+It has the following commands:
+- %METHODNAME% -> Renders the method name colored
+- %METHODPARAMS% -> Renders the parameter description specified in the method comment
+- %METHODRETURN% -> Renders the return description that is in the method comment
+- %METHODSMALLCOMMENT% -> Renders the first sentence of the comment
+- %METHODLARGECOMMENT% -> Renders all the comment until its end or the first command
+- %METHODACCESS% -> Renders an icon for the accessibility
+- %METHODOVERRIDE% -> Renders an override icon if the method overrides another
+- %METHODCLASS% -> Renders a class icon if the method belongs to the class
+- %METHODID% -> Renders a method ID to use in links and anchors
+
+
+DOCVariableRenderer RENDERER
+=================== ========
+Renders once per variable of the class, depending on the var type selected.
+- varType: This specifies wich kind of variable to render. Int can be 'INST' for instance variables, 'CLASS' for class variables, 'INSTCLASS' for class instance variables and finally 'ALL' to print all variables
+
+It has the following commands:
+- %VARNAME% -> Renders the variable name
+- %VARID% -> Renders the variable id
+
+
+

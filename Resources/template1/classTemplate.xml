@@ -1,0 +1,119 @@
+<template>
+<render type="class">
+	<template>
+		<![CDATA[<html>
+<head>
+<link rel="stylesheet" type="text/css" href="template1.css">
+<title>%CLASSID% Class</title>
+</head>
+
+<body>
+<script type="text/javascript" language="javascript">
+<!-- 
+function goTo(anchorName) {
+	window.location.href = "%CLASSID%.html#" + anchorName;
+}
+// -->
+</script>
+<table border="1" width="100%%" class="classHeader">
+  <tr>
+    <td width="100%%" class="classHeaderTD"><span class="classHeaderPackage">%CLASSPACKAGE%</span><br>
+      <span class="classHeaderName">%CLASSNAME%</span></td>
+  </tr>
+</table>
+<hr />
+
+<p>%CLASSHIERARCHY%</p>
+
+<pre class="syntax">
+<span class="lang">[Class difinition]</span>
+<b>%CLASSDEFINITION%</b>
+</pre>
+
+<p>%CLASSCOMMENT:<h4 class"dtH4">Class description</h4>%</p>
+
+%CHILDRENDER:allVar%
+
+%CHILDRENDER:methodHeader%
+
+%CHILDRENDER:methodDesc%
+</body>
+</html>]]>
+	</template>
+	<render id="allVar" type="variable" varType="ALL">
+		<header>
+			<![CDATA[<h4 class"dtH4">Variables</h4>
+				<p>
+					<table cellspacing="0" class="dtTABLE">]]>
+		</header>
+		<template><![CDATA[	
+		<TR VALIGN="top">
+			<TD width="30%%" class="dtTABLETD"><b>%VARNAME%</b> (%VARTYPE%)</TD>
+			<TD width="70%%" class="dtTABLETD">%VARCOMMENT%</TD>
+		</TR>
+		]]></template>
+		<footer>
+		<![CDATA[
+			</TABLE>
+		</p>
+		]]>
+		</footer>
+	</render>
+	<render id="methodHeader" type="method" methodType="ALL">
+		<header>
+		<![CDATA[
+			<h4 class"dtH4">Methods</h4>
+			<p>
+				<table cellspacing="0" class="dtTABLE">
+		]]>
+		</header>
+		<template><![CDATA[	
+		<TR VALIGN="top">
+			<TD width="10px" class="dtTABLETD">%METHODCLASS%</TD>
+			<TD width="60%%" class="dtTABLETD">
+				<a name="meth_%METHODID%"><!-- --></a>
+				%METHODACCESS%&nbsp;%METHODNAME%&nbsp;%METHODOVERRIDE%
+			</TD>
+			<TD class="dtTABLETD">
+				%METHODSMALLCOMMENT%<br />
+				<A HREF="javascript:goTo('met_%METHODID%');">more...</A>
+			</TD>
+		</TR>
+		]]></template>
+		<footer>
+		<![CDATA[
+			</table>
+		</p>
+		]]>
+		</footer>
+	</render>
+	<render id="methodDesc" type="method" methodType="ALL">
+		<header>
+		<![CDATA[
+			<h4 class"dtH4">Method full description</h4>
+			<p>
+		]]>
+		</header>
+		<template><![CDATA[	
+		<table cellspacing="0" class="dtTABLE">
+		<TR VALIGN="top">
+			<TD width="80%%" class="methodTitle dtTABLETD"><a name="met_%METHODID%"><!-- --></a>%METHODNAME%</TD>
+		</TR><TR>
+			<TD width="80%%" class="dtTABLETD">%METHODLARGECOMMENT%<br />
+			%METHODPARAMS:<b>Parameters</b><br />:paramTable:paramTableTD%
+			%METHODRETURN:<br /><b>Returns</b><br />%<br />
+			%METHODCATEGORIES:<br /><b>Categories\:</b>&nbsp;%<br />
+			</TD>
+		</TR><TR>
+			<TD width="80%%" class="dtTABLETD">
+				<A href="javascript:goTo('meth_%METHODID%');">Go Back</A>
+			</TD>
+		</TR>
+		</table>
+		]]></template>
+		<footer>
+		<![CDATA[</p>]]>
+		</footer>
+	</render>
+</render>
+</template>

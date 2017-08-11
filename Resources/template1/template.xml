@@ -1,0 +1,18 @@
+<template>
+	<file src="template1.css" dest="template1.css" />
+	<file src="..\images\blank.jpg" dest="blank.jpg" />
+	<file src="..\images\class.jpg" dest="class.jpg" />
+	<file src="..\images\override.jpg" dest="override.jpg" />
+	<file src="..\images\private.jpg" dest="private.jpg" />
+	<file src="..\images\public.jpg" dest="public.jpg" />
+	<template type="class" templateFile="classTemplate.xml" />
+	<template type="package" templateFile="packageTemplate.xml" />
+	<template type="index" templateFile="indexTemplate.xml" />
+	<template type="default" templateFile="mainTemplate.xml" outFile="index.html" />
+	<config key="PrivIcon" value="private.jpg" />
+	<config key="PubIcon" value="public.jpg" />
+	<config key="BlankIcon" value="blank.jpg" />
+	<config key="ClassIcon" value="class.jpg" />
+	<config key="OverIcon" value="override.jpg" />
+	<config key="DefaultStyle" value="cText" />
+</template>

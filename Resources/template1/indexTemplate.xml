@@ -1,0 +1,74 @@
+<indexTemplate>
+<index type="hierarchy">
+	<template>
+	<![CDATA[
+	<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="template1.css">
+		<title>%INDEXNAME%</title>
+	</head>
+	<body style="background: #EEEEEE;">
+		<script type="text/javascript" language="javascript">
+			<!-- 
+			function browseClass(pageName) {
+				window.top.frames["mainFrame"].location.href = pageName;
+			}
+			// -->
+		</script>
+		%INDEXBAR:indexBarTable:indexBarTableTD%<br />
+		<h1>%INDEXNAME%</h1><br />
+		%INDEXBODY%
+	</body>
+	</html>
+	]]>
+	</template>
+</index>
+<index type="alphabetical">
+	<template>
+	<![CDATA[
+	<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="template1.css">
+		<title>%INDEXNAME%</title>
+	</head>
+	<body style="background: #EEEEEE;">
+		<script type="text/javascript" language="javascript">
+			<!-- 
+			function browseClass(pageName) {
+				window.top.frames["mainFrame"].location.href = pageName;
+			}
+			// -->
+		</script>
+		%INDEXBAR:indexBarTable:indexBarTableTD%<br />
+		<h1>%INDEXNAME%</h1><br />
+		%INDEXBODY%
+	</body>
+	</html>
+	]]>
+	</template>
+</index>
+<index type="package">
+	<template>
+	<![CDATA[
+	<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="template1.css">
+		<title>%INDEXNAME%</title>
+	</head>
+	<body style="background: #EEEEEE;">
+		<script type="text/javascript" language="javascript">
+			<!-- 
+			function browseClass(pageName) {
+				window.top.frames["mainFrame"].location.href = pageName;
+			}
+			// -->
+		</script>
+		%INDEXBAR:indexBarTable:indexBarTableTD%<br />
+		<h1>%INDEXNAME%</h1><br />
+		%INDEXBODY%
+	</body>
+	</html>
+	]]>
+	</template>
+</index>
+</indexTemplate>

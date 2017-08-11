@@ -1,0 +1,29 @@
+<template>
+<render type="text">
+	<template>
+		<![CDATA[
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="template1.css">
+<title>Documentation of %LABEL:PROJECT_NAME%</title>
+</head>
+<body>
+<table height="100%%" style="border-collapse:collapse;">
+<tr>
+	<td colspan="2" style="height:40px;text-align:center;background: #EEEEEE;"><t1><b>%LABEL:PROJECT_NAME%</b></t1></td>
+</tr>
+<tr>
+	<td height="100%%" width="25%%">
+		<iframe frameborder="0" height="100%%" width="100%%" id="indexFrame" name="indexFrame" src="_indexHierarchy.html"></iframe>
+	</td>
+	<td height="100%%" width="75%%">
+		<iframe frameborder="0" height="100%%" width="100%%" id="mainFrame" name="mainFrame" src="about:blank"></iframe>
+	</td>
+</tr>
+</table>
+</body>
+</html>
+		]]>
+	</template>
+</render>
+</template>

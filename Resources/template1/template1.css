@@ -1,0 +1,208 @@
+body {
+	font-family: Verdana;
+	font-size: 11px;
+}
+.classHeader
+{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	width: 100%;
+	height: 21px; 
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 0px;
+	background-color: #99ccff; 
+	font-size: 11px;
+}
+
+.classHeaderTD
+	{
+	margin: 0px 0px 0px 0px;
+	padding: 2px 0px 0px 4px;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #77aadd;
+	background: transparent; 
+}
+.classHeaderPackage {
+	font-style: italic;
+	}
+.classHeaderName {
+	font-weight: bold;
+	font-size: 150%;
+	}
+	
+.lang
+{
+	color: #333333;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	font-weight: normal;
+	font-style: normal;
+}
+hr {
+	height:1px;
+}
+
+pre
+	{
+	margin-top: .5em;
+	margin-bottom: .5em; 
+white-space: pre-wrap;       
+white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+white-space: -pre-wrap;      /* Opera 4-6 */
+white-space: -o-pre-wrap;    /* Opera 7 */
+word-wrap: break-word;       /* Internet Explorer 5.5+ *//* css-3 */
+}
+
+pre, code, .code
+	{
+	font: 100% Monospace, Courier New, Courier; /* This is 100% of 70% */
+	color: #000066;
+	}
+pre b, code b
+	{
+	letter-spacing: .1em; /* opens kerning on bold in Syntax/Code */
+	}
+pre.syntax
+	{
+	background: #cccccc;
+	padding: 4px 8px;
+	cursor: text;
+	margin-top: 1em;
+	margin-bottom: 1em; 
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #999999;
+	}
+
+a:link
+	{
+	color: #0000ff;
+	}
+a:visited
+	{
+	color: #0000ff;
+	}
+a:hover
+	{
+	color: #3366ff;
+	}
+	
+h1, h2, h3, h4
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-bottom: .4em; 
+	margin-top: 1em;
+	font-weight: bold;
+	}
+h1
+	{
+	font-size: 120%;
+	margin-top: 0em;
+	}
+h2
+	{
+	font-size: 130%;
+	}
+h3
+	{
+	font-size: 115%;
+	}
+h4
+	{
+	font-size: 100%;
+	}
+.dtH1, .dtH2, .dtH3, .dtH4
+	{
+	margin-left: -18px;
+	}
+	
+.dtTABLE
+	{
+	width: 100%; /* Forces tables to have correct right margin */
+	margin-top: .6em;
+	margin-bottom: .3em;
+	border-width: 1px 1px 0px 0px;
+	border-style: solid;
+	border-color: #999999;
+	background-color: #999999; 
+	}
+.dtTABLETH	
+	{ 
+	border-style: solid; /* Creates the cell border and color */
+	border-width: 0px 0px 1px 1px;
+	border-style: solid;
+	border-color: #999999;
+	padding: 4px 6px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 11px;
+	background: #cccccc; /* Creates the shaded table header row */
+	vertical-align: bottom;
+	}
+.dtTABLETD	
+	{
+	border-style: solid; /* Creates the cell border and color */
+	border-width: 0px 0px 1px 1px;
+	border-style: solid;
+	border-color: #999999;
+	padding: 4px 6px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 11px;
+	background: #ffffff;
+	vertical-align: top;
+	}
+	
+.paramTable
+	{
+	width: 100%; /* Forces tables to have correct right margin */
+	margin-top: .6em;
+	margin-bottom: .3em;
+	border: 0;
+	background-color: #FFFFFF; 
+	}
+.paramTableTD {
+	border:0;
+	padding: 3px 3px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 11px;
+	vertical-align: top;
+}
+
+.indexBarTable
+{
+	width: 100%; /* Forces tables to have correct right margin */
+	margin-top: .6em;
+	margin-bottom: .3em;
+	border: 1px;
+	background: #EEEEEE;
+}
+.indexBarTableTD {
+	border-style: solid; /* Creates the cell border and color */
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #999999;
+	padding: 3px 3px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 11px;
+	vertical-align: top;
+}
+
+.methodTitle {
+	background: #EEEEEE;
+}
+
+.cText {
+	padding: 4px 6px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 11px;
+	background: #ffffff;
+	vertical-align: top;
+}

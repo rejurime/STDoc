@@ -1,0 +1,38 @@
+<template>
+<render type="text">
+	<template>
+		<text>
+		<![CDATA[
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="template1.css">
+<title>Documentation of %LABEL:PROJECT_NAME%</title>
+</head>
+<body class="mainBody">
+		<script type="text/javascript" language="javascript">
+			<!-- 
+			function browseClass(pageName) {
+				window.top.frames["mainFrame"].location.href = pageName;
+			}
+			// -->
+		</script>
+<table height="100%%" style="border:0;border-collapse:collapse;">
+<tr>
+	<td colspan="2" style="border:1px solid black;height:40px;text-align:center;background: #EEEEEE;"><a href="javascript:browseClass('introduction.html');"><t1><b>%LABEL:PROJECT_NAME%</b></t1></a></td>
+</tr>
+<tr>
+	<td height="100%%" width="25%%" style="border:1px solid black;">
+		<iframe frameborder="0" height="100%%" width="100%%" id="indexFrame" name="indexFrame" src="_indexHierarchy.html"></iframe>
+	</td>
+	<td height="100%%" width="75%%" style="border:1px solid black;">
+		<iframe frameborder="0" height="100%%" width="100%%" id="mainFrame" name="mainFrame" src="introduction.html"></iframe>
+	</td>
+</tr>
+</table>
+</body>
+</html>
+		]]>
+		</text>
+	</template>
+</render>
+</template>

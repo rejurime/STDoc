@@ -1,0 +1,242 @@
+| package |
+package := Package name: 'STDoc'.
+package paxVersion: 1;
+	basicComment: 'STDoc 1.1
+------------------------
+Creado:	21 de febrero del 2007
+Autores:	Javier Capanegra
+
+Descripcion:
+-----------------
+Este paquete es utilizado para documentar las clases, los métodos y los paquetes que componen un aplicación. La sintaxis de documentación es similar al Javadoc.
+
+Este paquete interpreta los comentarios de cada uno de estos elementos (metodos, clases y paquetes) y genera archivos HTML con la documentación correspondiente.
+
+Este paquete realiza índices por:
+* órden alfabético
+* jerarquía de clases
+* paquetes
+
+Para ver ejemplos de como documentar se pueden observar los paquetes de componentes que tienen todos sus elementos bien documentados.
+
+
+generarDiagramasPara: unasClases en: unPath renderSuperclasses: renderSuperclasses private: renderPrivates accessors: renderAccessors classPublics: renderCPub classPrivates: renderCPriv classAccessors: renderClassAcc
+
+forClass: aClass'.
+
+package basicPackageVersion: '1.0'.
+
+package imageStripperBytes: (ByteArray fromBase64String: 'IVNUQiAxIAAAAAA=').
+
+package classNames
+	add: #ClassDiagramBuilder;
+	add: #DOCAnd;
+	add: #DOCClass;
+	add: #DOCClassRenderer;
+	add: #DOCClassTemplate;
+	add: #DOCClassTemplateRenderer;
+	add: #DOCComment;
+	add: #DOCCondCmd;
+	add: #DOCCondition;
+	add: #DOCConfig;
+	add: #DOCDefaultProcessor;
+	add: #DOCIndexRenderer;
+	add: #DOCIndexTemplate;
+	add: #DOCMethod;
+	add: #DOCMethodRenderer;
+	add: #DOCObject;
+	add: #DOCOr;
+	add: #DOCPackageRenderer;
+	add: #DOCPackageTemplate;
+	add: #DOCParseError;
+	add: #DOCPredefinedCond;
+	add: #DOCProcessor;
+	add: #DOCRenderCmd;
+	add: #DOCRenderer;
+	add: #DOCSmalltalkManager;
+	add: #DOCSUtils;
+	add: #DOCTemplateSpec;
+	add: #DOCTextCmd;
+	add: #DOCTextRenderer;
+	add: #DOCVariable;
+	add: #DOCVariableRenderer;
+	yourself.
+
+package binaryGlobalNames: (Set new
+	yourself).
+
+package globalAliases: (Set new
+	yourself).
+
+package setPrerequisites: (IdentitySet new
+	add: '..\..\Core\Object Arts\Dolphin\Base\Dolphin';
+	add: '..\..\Core\Object Arts\Dolphin\ActiveX\Components\XML DOM\XML DOM';
+	yourself).
+
+package!
+
+"Class Definitions"!
+
+Object subclass: #DOCObject
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #ClassDiagramBuilder
+	instanceVariableNames: 'subjectClass methods classMethods outFile templateFile renderSuperclasses'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCClass
+	instanceVariableNames: 'manager classObject classMethods methods variables classVariables instanceClassVariables docComment superClasses subClasses'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCComment
+	instanceVariableNames: 'comment attrTable fullComment smallComment combined'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCCondition
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCConfig
+	instanceVariableNames: 'renderPrivate renderPublic renderClassPublic renderClassPrivate templateName listeners templateDir docPath renderSuperclasses renderRelatedClasses renderClassAccessor renderAccessors'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCMethod
+	instanceVariableNames: 'comment methodObject definition id'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCProcessor
+	instanceVariableNames: 'manager fileName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCRenderCmd
+	instanceVariableNames: 'renderer'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCRenderer
+	instanceVariableNames: 'manager headerCommands bodyCommands footerCommands childRenderers parent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCSmalltalkManager
+	instanceVariableNames: 'config processors configKeys progress defaultStyle privIcon pubIcon overIcon classIcon blankIcon classes stClassSet packages'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCSUtils
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCObject subclass: #DOCVariable
+	instanceVariableNames: 'name docClass type'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCCondition subclass: #DOCAnd
+	instanceVariableNames: 'conditions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCCondition subclass: #DOCOr
+	instanceVariableNames: 'conditions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCCondition subclass: #DOCPredefinedCond
+	instanceVariableNames: 'renderer condition'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCProcessor subclass: #DOCClassTemplate
+	instanceVariableNames: 'renderers outDir'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCProcessor subclass: #DOCDefaultProcessor
+	instanceVariableNames: 'renderers outFile'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCProcessor subclass: #DOCIndexTemplate
+	instanceVariableNames: 'hierarchy renderers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCProcessor subclass: #DOCTemplateSpec
+	instanceVariableNames: 'filesToCopy'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCClassTemplate subclass: #DOCPackageTemplate
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCRenderCmd subclass: #DOCCondCmd
+	instanceVariableNames: 'trueCommands falseCommands condition'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCRenderCmd subclass: #DOCTextCmd
+	instanceVariableNames: 'name params'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCRenderer subclass: #DOCClassTemplateRenderer
+	instanceVariableNames: 'header footer'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCRenderer subclass: #DOCIndexRenderer
+	instanceVariableNames: 'type fileName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCRenderer subclass: #DOCPackageRenderer
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCRenderer subclass: #DOCTextRenderer
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCClassTemplateRenderer subclass: #DOCClassRenderer
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCClassTemplateRenderer subclass: #DOCMethodRenderer
+	instanceVariableNames: 'methodType'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+DOCClassTemplateRenderer subclass: #DOCVariableRenderer
+	instanceVariableNames: 'varType'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Error subclass: #DOCParseError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+"Global Aliases"!
+
+
+"Loose Methods"!
+
+"End of package definition"!
+
