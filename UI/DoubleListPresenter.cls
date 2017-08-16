@@ -5,7 +5,7 @@ ValuePresenter subclass: #DoubleListPresenter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DoubleListPresenter guid: (GUID fromString: '{E4469A0A-38CD-450F-A320-53B31B296EB1}')!
+DoubleListPresenter guid: (GUID fromString: '{e4469a0a-38cd-450f-a320-53b31b296eb1}')!
 DoubleListPresenter comment: ''!
 !DoubleListPresenter categoriesForClass!Unclassified! !
 !DoubleListPresenter methodsFor!

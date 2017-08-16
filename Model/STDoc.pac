@@ -30,36 +30,36 @@ package imageStripperBytes: (ByteArray fromBase64String: 'IVNUQiAxIAAAAAA=').
 
 package classNames
 	add: #ClassDiagramBuilder;
-	add: #DOCAnd;
-	add: #DOCClass;
-	add: #DOCClassRenderer;
-	add: #DOCClassTemplate;
-	add: #DOCClassTemplateRenderer;
-	add: #DOCComment;
-	add: #DOCCondCmd;
-	add: #DOCCondition;
-	add: #DOCConfig;
-	add: #DOCDefaultProcessor;
-	add: #DOCIndexRenderer;
-	add: #DOCIndexTemplate;
-	add: #DOCMethod;
-	add: #DOCMethodRenderer;
-	add: #DOCObject;
-	add: #DOCOr;
-	add: #DOCPackageRenderer;
-	add: #DOCPackageTemplate;
-	add: #DOCParseError;
-	add: #DOCPredefinedCond;
-	add: #DOCProcessor;
-	add: #DOCRenderCmd;
-	add: #DOCRenderer;
-	add: #DOCSmalltalkManager;
-	add: #DOCSUtils;
-	add: #DOCTemplateSpec;
-	add: #DOCTextCmd;
-	add: #DOCTextRenderer;
-	add: #DOCVariable;
-	add: #DOCVariableRenderer;
+	add: #STDocAnd;
+	add: #STDocClass;
+	add: #STDocClassRenderer;
+	add: #STDocClassTemplate;
+	add: #STDocClassTemplateRenderer;
+	add: #STDocComment;
+	add: #STDocCondCmd;
+	add: #STDocCondition;
+	add: #STDocConfig;
+	add: #STDocDefaultProcessor;
+	add: #STDocIndexRenderer;
+	add: #STDocIndexTemplate;
+	add: #STDocMethod;
+	add: #STDocMethodRenderer;
+	add: #STDocObject;
+	add: #STDocOr;
+	add: #STDocPackageRenderer;
+	add: #STDocPackageTemplate;
+	add: #STDocParseError;
+	add: #STDocPredefinedCond;
+	add: #STDocProcessor;
+	add: #STDocRenderCmd;
+	add: #STDocRenderer;
+	add: #STDocSmalltalkManager;
+	add: #STDocTemplateSpec;
+	add: #STDocTextCmd;
+	add: #STDocTextRenderer;
+	add: #STDocUtil;
+	add: #STDocVariable;
+	add: #STDocVariableRenderer;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -77,158 +77,158 @@ package!
 
 "Class Definitions"!
 
-Object subclass: #DOCObject
+Object subclass: #STDocObject
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #ClassDiagramBuilder
+Error subclass: #STDocParseError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+STDocObject subclass: #ClassDiagramBuilder
 	instanceVariableNames: 'subjectClass methods classMethods outFile templateFile renderSuperclasses'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCClass
+STDocObject subclass: #STDocClass
 	instanceVariableNames: 'manager classObject classMethods methods variables classVariables instanceClassVariables docComment superClasses subClasses'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCComment
+STDocObject subclass: #STDocComment
 	instanceVariableNames: 'comment attrTable fullComment smallComment combined'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCCondition
+STDocObject subclass: #STDocCondition
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCConfig
+STDocObject subclass: #STDocConfig
 	instanceVariableNames: 'renderPrivate renderPublic renderClassPublic renderClassPrivate templateName listeners templateDir docPath renderSuperclasses renderRelatedClasses renderClassAccessor renderAccessors'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCMethod
+STDocObject subclass: #STDocMethod
 	instanceVariableNames: 'comment methodObject definition id'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCProcessor
+STDocObject subclass: #STDocProcessor
 	instanceVariableNames: 'manager fileName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCRenderCmd
+STDocObject subclass: #STDocRenderCmd
 	instanceVariableNames: 'renderer'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCRenderer
+STDocObject subclass: #STDocRenderer
 	instanceVariableNames: 'manager headerCommands bodyCommands footerCommands childRenderers parent'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCSmalltalkManager
+STDocObject subclass: #STDocSmalltalkManager
 	instanceVariableNames: 'config processors configKeys progress defaultStyle privIcon pubIcon overIcon classIcon blankIcon classes stClassSet packages'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCSUtils
+STDocObject subclass: #STDocUtil
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCVariable
+STDocObject subclass: #STDocVariable
 	instanceVariableNames: 'name docClass type'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCCondition subclass: #DOCAnd
+STDocCondition subclass: #STDocAnd
 	instanceVariableNames: 'conditions'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCCondition subclass: #DOCOr
+STDocCondition subclass: #STDocOr
 	instanceVariableNames: 'conditions'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCCondition subclass: #DOCPredefinedCond
+STDocCondition subclass: #STDocPredefinedCond
 	instanceVariableNames: 'renderer condition'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCProcessor subclass: #DOCClassTemplate
+STDocProcessor subclass: #STDocClassTemplate
 	instanceVariableNames: 'renderers outDir'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCProcessor subclass: #DOCDefaultProcessor
+STDocProcessor subclass: #STDocDefaultProcessor
 	instanceVariableNames: 'renderers outFile'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCProcessor subclass: #DOCIndexTemplate
+STDocProcessor subclass: #STDocIndexTemplate
 	instanceVariableNames: 'hierarchy renderers'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCProcessor subclass: #DOCTemplateSpec
+STDocProcessor subclass: #STDocTemplateSpec
 	instanceVariableNames: 'filesToCopy'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCClassTemplate subclass: #DOCPackageTemplate
+STDocClassTemplate subclass: #STDocPackageTemplate
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderCmd subclass: #DOCCondCmd
+STDocRenderCmd subclass: #STDocCondCmd
 	instanceVariableNames: 'trueCommands falseCommands condition'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderCmd subclass: #DOCTextCmd
+STDocRenderCmd subclass: #STDocTextCmd
 	instanceVariableNames: 'name params'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderer subclass: #DOCClassTemplateRenderer
+STDocRenderer subclass: #STDocClassTemplateRenderer
 	instanceVariableNames: 'header footer'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderer subclass: #DOCIndexRenderer
+STDocRenderer subclass: #STDocIndexRenderer
 	instanceVariableNames: 'type fileName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderer subclass: #DOCPackageRenderer
+STDocRenderer subclass: #STDocPackageRenderer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderer subclass: #DOCTextRenderer
+STDocRenderer subclass: #STDocTextRenderer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCClassTemplateRenderer subclass: #DOCClassRenderer
+STDocClassTemplateRenderer subclass: #STDocClassRenderer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCClassTemplateRenderer subclass: #DOCMethodRenderer
+STDocClassTemplateRenderer subclass: #STDocMethodRenderer
 	instanceVariableNames: 'methodType'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCClassTemplateRenderer subclass: #DOCVariableRenderer
+STDocClassTemplateRenderer subclass: #STDocVariableRenderer
 	instanceVariableNames: 'varType'
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-Error subclass: #DOCParseError
-	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
@@ -244,22 +244,27 @@ Error subclass: #DOCParseError
 
 "Classes"!
 
-DOCObject guid: (GUID fromString: '{592A9D63-F819-4782-A5A0-197D460FB430}')!
-DOCObject comment: ''!
-!DOCObject categoriesForClass!Unclassified! !
-!DOCObject methodsFor!
+STDocObject guid: (GUID fromString: '{592a9d63-f819-4782-a5a0-197d460fb430}')!
+STDocObject comment: ''!
+!STDocObject categoriesForClass!Unclassified! !
+!STDocObject methodsFor!
 
 parseError: aString
-	^DOCParseError signal: aString! !
-!DOCObject categoriesFor: #parseError:!private! !
+	^STDocParseError signal: aString! !
+!STDocObject categoriesFor: #parseError:!private! !
 
-!DOCObject class methodsFor!
+!STDocObject class methodsFor!
 
 new
-	^self basicNew initialize! !
-!DOCObject class categoriesFor: #new!public! !
+	"Answer a new initialized instance."
 
-ClassDiagramBuilder guid: (GUID fromString: '{69F10040-C125-4CB3-9967-4D89253F3D69}')!
+	^self basicNew initialize! !
+!STDocObject class categoriesFor: #new!public! !
+
+STDocParseError guid: (GUID fromString: '{b4569eaa-abd3-4562-b3c7-5af2a2b3221d}')!
+STDocParseError comment: ''!
+!STDocParseError categoriesForClass!Unclassified! !
+ClassDiagramBuilder guid: (GUID fromString: '{69f10040-c125-4cb3-9967-4d89253f3d69}')!
 ClassDiagramBuilder comment: ''!
 !ClassDiagramBuilder categoriesForClass!Unclassified! !
 !ClassDiagramBuilder methodsFor!
@@ -591,10 +596,10 @@ searchSuperclasses: unasClases
 !ClassDiagramBuilder class categoriesFor: #new!public! !
 !ClassDiagramBuilder class categoriesFor: #searchSuperclasses:!private! !
 
-DOCClass guid: (GUID fromString: '{4F92FA62-A6BC-4FF7-8FCB-0C823A5B6155}')!
-DOCClass comment: ''!
-!DOCClass categoriesForClass!Unclassified! !
-!DOCClass methodsFor!
+STDocClass guid: (GUID fromString: '{4f92fa62-a6bc-4ff7-8fcb-0c823a5b6155}')!
+STDocClass comment: ''!
+!STDocClass categoriesForClass!Unclassified! !
+!STDocClass methodsFor!
 
 = anObject
 	^self class = anObject class and: [self name = anObject name]!
@@ -625,7 +630,8 @@ classReferencesFrom: aMethod
 			| obj |
 			obj := aMethod at: c.
 			(obj isKindOf: Association)
-				ifTrue: [obj value isBehavior ifTrue: [col add: (DOCClass forClass: obj value manager: self manager)]]].
+				ifTrue: 
+					[obj value isBehavior ifTrue: [col add: (STDocClass forClass: obj value manager: self manager)]]].
 	^col!
 
 classVariables
@@ -638,7 +644,7 @@ classVariables: anObject
 	classVariables := anObject!
 
 docComment
-	^docComment ifNil: [docComment := DOCComment forClass: self classObject]!
+	^docComment ifNil: [docComment := STDocComment forClass: self classObject]!
 
 hash
 	^self class hash bitXor: self name hash!
@@ -701,18 +707,18 @@ selectMethods
 								or: [manager config renderPublic and: [m isPrivate not]]])!
 
 selectVariables
-	classVariables := (classObject classVarNames collect: [:v | DOCVariable forClassVar: self name: v])
+	classVariables := (classObject classVarNames collect: [:v | STDocVariable forClassVar: self name: v])
 				asOrderedCollection.
-	variables := (classObject instVarNames collect: [:v | DOCVariable forInstVar: self name: v])
+	variables := (classObject instVarNames collect: [:v | STDocVariable forInstVar: self name: v])
 				asOrderedCollection.
 	instanceClassVariables := (classObject class instVarNames
-				collect: [:v | DOCVariable forClassInstVar: self name: v]) asOrderedCollection!
+				collect: [:v | STDocVariable forClassInstVar: self name: v]) asOrderedCollection!
 
 setFor: aClass
 	classObject := aClass!
 
 sortMethods: someMethods
-	^(someMethods collect: [:m | DOCMethod for: m]) asSortedCollection!
+	^(someMethods collect: [:m | STDocMethod for: m]) asSortedCollection!
 
 subclasses
 	subClasses notNil ifTrue: [^subClasses].
@@ -722,7 +728,7 @@ subclasses
 superclass
 	^self classObject superclass
 		ifNil: []
-		ifNotNil: [:sprCls | DOCClass forClass: sprCls manager: self manager]!
+		ifNotNil: [:sprCls | STDocClass forClass: sprCls manager: self manager]!
 
 superClasses
 	"Makes a Collection of super classes of the contained class, that are ordered by proximity to the contained class reversed.
@@ -735,7 +741,7 @@ superClasses
 	supers := OrderedCollection new.
 	sprClass := self superclass ifNotNil: [:cls | cls classObject].
 	[sprClass notNil] whileTrue: 
-			[supers add: (DOCClass forClass: sprClass manager: self manager).
+			[supers add: (STDocClass forClass: sprClass manager: self manager).
 			sprClass := sprClass superclass].
 	superClasses := supers reverse.
 	^superClasses!
@@ -748,38 +754,38 @@ variables
 
 variables: anObject
 	variables := anObject! !
-!DOCClass categoriesFor: #=!public! !
-!DOCClass categoriesFor: #classMethods!accessing!public! !
-!DOCClass categoriesFor: #classMethods:!accessing!public! !
-!DOCClass categoriesFor: #classObject!accessing!public! !
-!DOCClass categoriesFor: #classObject:!accessing!public! !
-!DOCClass categoriesFor: #classReferencesFrom:!private! !
-!DOCClass categoriesFor: #classVariables!accessing!public! !
-!DOCClass categoriesFor: #classVariables:!accessing!public! !
-!DOCClass categoriesFor: #docComment!public! !
-!DOCClass categoriesFor: #hash!public! !
-!DOCClass categoriesFor: #instanceClassVariables!accessing!public! !
-!DOCClass categoriesFor: #instanceClassVariables:!accessing!public! !
-!DOCClass categoriesFor: #manager!accessing!public! !
-!DOCClass categoriesFor: #manager:!accessing!public! !
-!DOCClass categoriesFor: #methods!accessing!public! !
-!DOCClass categoriesFor: #methods:!accessing!public! !
-!DOCClass categoriesFor: #name!public! !
-!DOCClass categoriesFor: #package!public! !
-!DOCClass categoriesFor: #printOn:!public! !
-!DOCClass categoriesFor: #relatedClasses!public! !
-!DOCClass categoriesFor: #searchMethod:!public! !
-!DOCClass categoriesFor: #selectMethods!private! !
-!DOCClass categoriesFor: #selectVariables!private! !
-!DOCClass categoriesFor: #setFor:!public! !
-!DOCClass categoriesFor: #sortMethods:!private! !
-!DOCClass categoriesFor: #subclasses!public! !
-!DOCClass categoriesFor: #superclass!public! !
-!DOCClass categoriesFor: #superClasses!public! !
-!DOCClass categoriesFor: #variables!accessing!public! !
-!DOCClass categoriesFor: #variables:!accessing!public! !
+!STDocClass categoriesFor: #=!public! !
+!STDocClass categoriesFor: #classMethods!accessing!public! !
+!STDocClass categoriesFor: #classMethods:!accessing!public! !
+!STDocClass categoriesFor: #classObject!accessing!public! !
+!STDocClass categoriesFor: #classObject:!accessing!public! !
+!STDocClass categoriesFor: #classReferencesFrom:!private! !
+!STDocClass categoriesFor: #classVariables!accessing!public! !
+!STDocClass categoriesFor: #classVariables:!accessing!public! !
+!STDocClass categoriesFor: #docComment!public! !
+!STDocClass categoriesFor: #hash!public! !
+!STDocClass categoriesFor: #instanceClassVariables!accessing!public! !
+!STDocClass categoriesFor: #instanceClassVariables:!accessing!public! !
+!STDocClass categoriesFor: #manager!accessing!public! !
+!STDocClass categoriesFor: #manager:!accessing!public! !
+!STDocClass categoriesFor: #methods!accessing!public! !
+!STDocClass categoriesFor: #methods:!accessing!public! !
+!STDocClass categoriesFor: #name!public! !
+!STDocClass categoriesFor: #package!public! !
+!STDocClass categoriesFor: #printOn:!public! !
+!STDocClass categoriesFor: #relatedClasses!public! !
+!STDocClass categoriesFor: #searchMethod:!public! !
+!STDocClass categoriesFor: #selectMethods!private! !
+!STDocClass categoriesFor: #selectVariables!private! !
+!STDocClass categoriesFor: #setFor:!public! !
+!STDocClass categoriesFor: #sortMethods:!private! !
+!STDocClass categoriesFor: #subclasses!public! !
+!STDocClass categoriesFor: #superclass!public! !
+!STDocClass categoriesFor: #superClasses!public! !
+!STDocClass categoriesFor: #variables!accessing!public! !
+!STDocClass categoriesFor: #variables:!accessing!public! !
 
-!DOCClass class methodsFor!
+!STDocClass class methodsFor!
 
 forClass: aClass manager: aManager
 	"Creates a DOCClassfor a specific class and manager
@@ -791,12 +797,12 @@ forClass: aClass manager: aManager
 		manager: aManager;
 		setFor: aClass;
 		yourself! !
-!DOCClass class categoriesFor: #forClass:manager:!public! !
+!STDocClass class categoriesFor: #forClass:manager:!public! !
 
-DOCComment guid: (GUID fromString: '{FDCD6495-E6E7-44C5-A2F4-34EB915BDA97}')!
-DOCComment comment: ''!
-!DOCComment categoriesForClass!Unclassified! !
-!DOCComment methodsFor!
+STDocComment guid: (GUID fromString: '{fdcd6495-e6e7-44c5-a2f4-34eb915bda97}')!
+STDocComment comment: ''!
+!STDocComment categoriesForClass!Unclassified! !
+!STDocComment methodsFor!
 
 attributeIncludes: aName
 	^self attributeTable includesKey: aName!
@@ -823,12 +829,12 @@ attributeTable
 	| str attribute result |
 	attrTable notNil ifTrue: [^attrTable].
 	str := self comment readStream.
-	DOCSUtils ignoreFrom: str upTo: [:c | c == $@].
+	STDocUtil ignoreFrom: str upTo: [:c | c == $@].
 	result := LookupTable new.
-	[(attribute := DOCSUtils stringFrom: str upTo: [:c | c == $@]) notNil] whileTrue: 
+	[(attribute := STDocUtil stringFrom: str upTo: [:c | c == $@]) notNil] whileTrue: 
 			[| id partStream |
 			partStream := attribute readStream.
-			id := DOCSUtils firstWordOf: partStream.
+			id := STDocUtil firstWordOf: partStream.
 			(result at: id ifAbsentPut: [OrderedCollection new]) add: partStream upToEnd trimBlanks].
 	attrTable := result.
 	^result!
@@ -889,25 +895,25 @@ smallComment
 		ifNil: 
 			[| line |
 			line := self fullComment readStream nextLine readStream.
-			smallComment := ((DOCSUtils stringFrom: line upTo: [:c | c = $.])
+			smallComment := ((STDocUtil stringFrom: line upTo: [:c | c = $.])
 						ifNil: ['']
 						ifNotNil: [:s | s , '.']) trimBlanks]! !
-!DOCComment categoriesFor: #attributeIncludes:!public! !
-!DOCComment categoriesFor: #attributeIncludesAll:!public! !
-!DOCComment categoriesFor: #attributesAt:do:!public! !
-!DOCComment categoriesFor: #attributesAt:ifAbsent:!public! !
-!DOCComment categoriesFor: #attributesIn:do:!public! !
-!DOCComment categoriesFor: #attributeTable!public! !
-!DOCComment categoriesFor: #combine:!public! !
-!DOCComment categoriesFor: #comment!accessing!public! !
-!DOCComment categoriesFor: #comment:!accessing!public! !
-!DOCComment categoriesFor: #fullComment!public! !
-!DOCComment categoriesFor: #hasLargeComment!public! !
-!DOCComment categoriesFor: #initialize!private! !
-!DOCComment categoriesFor: #parseMethod:!private! !
-!DOCComment categoriesFor: #smallComment!public! !
+!STDocComment categoriesFor: #attributeIncludes:!public! !
+!STDocComment categoriesFor: #attributeIncludesAll:!public! !
+!STDocComment categoriesFor: #attributesAt:do:!public! !
+!STDocComment categoriesFor: #attributesAt:ifAbsent:!public! !
+!STDocComment categoriesFor: #attributesIn:do:!public! !
+!STDocComment categoriesFor: #attributeTable!public! !
+!STDocComment categoriesFor: #combine:!public! !
+!STDocComment categoriesFor: #comment!accessing!public! !
+!STDocComment categoriesFor: #comment:!accessing!public! !
+!STDocComment categoriesFor: #fullComment!public! !
+!STDocComment categoriesFor: #hasLargeComment!public! !
+!STDocComment categoriesFor: #initialize!private! !
+!STDocComment categoriesFor: #parseMethod:!private! !
+!STDocComment categoriesFor: #smallComment!public! !
 
-!DOCComment class methodsFor!
+!STDocComment class methodsFor!
 
 for: aString
 	^(self new)
@@ -921,23 +927,23 @@ forMethod: aMethod
 	^(self new)
 		parseMethod: aMethod;
 		yourself! !
-!DOCComment class categoriesFor: #for:!public! !
-!DOCComment class categoriesFor: #forClass:!public! !
-!DOCComment class categoriesFor: #forMethod:!public! !
+!STDocComment class categoriesFor: #for:!public! !
+!STDocComment class categoriesFor: #forClass:!public! !
+!STDocComment class categoriesFor: #forMethod:!public! !
 
-DOCCondition guid: (GUID fromString: '{0F0025E8-3122-42A2-A1A1-45429C02E814}')!
-DOCCondition comment: ''!
-!DOCCondition categoriesForClass!Unclassified! !
-!DOCCondition methodsFor!
+STDocCondition guid: (GUID fromString: '{0f0025e8-3122-42a2-a1a1-45429c02e814}')!
+STDocCondition comment: ''!
+!STDocCondition categoriesForClass!Unclassified! !
+!STDocCondition methodsFor!
 
 cand: aCondition
-	^(DOCAnd new)
+	^(STDocAnd new)
 		conditions: self;
 		condition2: aCondition;
 		yourself!
 
 cor: aCondition
-	^(DOCOr new)
+	^(STDocOr new)
 		conditions: self;
 		condition2: aCondition;
 		yourself!
@@ -949,14 +955,14 @@ value: anObject
 	@returns true si la condición es válida o en caso contrario false"
 
 	^self subclassResponsibility! !
-!DOCCondition categoriesFor: #cand:!public! !
-!DOCCondition categoriesFor: #cor:!public! !
-!DOCCondition categoriesFor: #value:!public! !
+!STDocCondition categoriesFor: #cand:!public! !
+!STDocCondition categoriesFor: #cor:!public! !
+!STDocCondition categoriesFor: #value:!public! !
 
-DOCConfig guid: (GUID fromString: '{734557A4-5FC3-4D8E-B1F3-F2E27BD8A23E}')!
-DOCConfig comment: ''!
-!DOCConfig categoriesForClass!Unclassified! !
-!DOCConfig methodsFor!
+STDocConfig guid: (GUID fromString: '{734557a4-5fc3-4d8e-b1f3-f2e27bd8a23e}')!
+STDocConfig comment: ''!
+!STDocConfig categoriesForClass!Unclassified! !
+!STDocConfig methodsFor!
 
 docPath
 	^docPath!
@@ -1069,40 +1075,40 @@ templateName
 
 templateName: anObject
 	templateName := anObject! !
-!DOCConfig categoriesFor: #docPath!accessing!public! !
-!DOCConfig categoriesFor: #docPath:!accessing!public! !
-!DOCConfig categoriesFor: #initialize!public! !
-!DOCConfig categoriesFor: #listeners!accessing!public! !
-!DOCConfig categoriesFor: #listeners:!accessing!public! !
-!DOCConfig categoriesFor: #makeDocAbsolute:!public! !
-!DOCConfig categoriesFor: #makeTemplateAbsolute:!public! !
-!DOCConfig categoriesFor: #renderAccessors!accessing!public! !
-!DOCConfig categoriesFor: #renderAccessors:!accessing!public! !
-!DOCConfig categoriesFor: #renderClassAccessor!accessing!public! !
-!DOCConfig categoriesFor: #renderClassAccessor:!accessing!public! !
-!DOCConfig categoriesFor: #renderClassPrivate!accessing!public! !
-!DOCConfig categoriesFor: #renderClassPrivate:!accessing!public! !
-!DOCConfig categoriesFor: #renderClassPublic!accessing!public! !
-!DOCConfig categoriesFor: #renderClassPublic:!accessing!public! !
-!DOCConfig categoriesFor: #renderPrivate!accessing!public! !
-!DOCConfig categoriesFor: #renderPrivate:!accessing!public! !
-!DOCConfig categoriesFor: #renderPublic!accessing!public! !
-!DOCConfig categoriesFor: #renderPublic:!accessing!public! !
-!DOCConfig categoriesFor: #renderRelatedClasses!accessing!public! !
-!DOCConfig categoriesFor: #renderRelatedClasses:!accessing!public! !
-!DOCConfig categoriesFor: #renderSuperclasses!accessing!public! !
-!DOCConfig categoriesFor: #renderSuperclasses:!accessing!public! !
-!DOCConfig categoriesFor: #templateDir!accessing!public! !
-!DOCConfig categoriesFor: #templateDir:!accessing!public! !
-!DOCConfig categoriesFor: #templateDirectory!public! !
-!DOCConfig categoriesFor: #templateFileName!public! !
-!DOCConfig categoriesFor: #templateName!accessing!public! !
-!DOCConfig categoriesFor: #templateName:!accessing!public! !
+!STDocConfig categoriesFor: #docPath!accessing!public! !
+!STDocConfig categoriesFor: #docPath:!accessing!public! !
+!STDocConfig categoriesFor: #initialize!public! !
+!STDocConfig categoriesFor: #listeners!accessing!public! !
+!STDocConfig categoriesFor: #listeners:!accessing!public! !
+!STDocConfig categoriesFor: #makeDocAbsolute:!public! !
+!STDocConfig categoriesFor: #makeTemplateAbsolute:!public! !
+!STDocConfig categoriesFor: #renderAccessors!accessing!public! !
+!STDocConfig categoriesFor: #renderAccessors:!accessing!public! !
+!STDocConfig categoriesFor: #renderClassAccessor!accessing!public! !
+!STDocConfig categoriesFor: #renderClassAccessor:!accessing!public! !
+!STDocConfig categoriesFor: #renderClassPrivate!accessing!public! !
+!STDocConfig categoriesFor: #renderClassPrivate:!accessing!public! !
+!STDocConfig categoriesFor: #renderClassPublic!accessing!public! !
+!STDocConfig categoriesFor: #renderClassPublic:!accessing!public! !
+!STDocConfig categoriesFor: #renderPrivate!accessing!public! !
+!STDocConfig categoriesFor: #renderPrivate:!accessing!public! !
+!STDocConfig categoriesFor: #renderPublic!accessing!public! !
+!STDocConfig categoriesFor: #renderPublic:!accessing!public! !
+!STDocConfig categoriesFor: #renderRelatedClasses!accessing!public! !
+!STDocConfig categoriesFor: #renderRelatedClasses:!accessing!public! !
+!STDocConfig categoriesFor: #renderSuperclasses!accessing!public! !
+!STDocConfig categoriesFor: #renderSuperclasses:!accessing!public! !
+!STDocConfig categoriesFor: #templateDir!accessing!public! !
+!STDocConfig categoriesFor: #templateDir:!accessing!public! !
+!STDocConfig categoriesFor: #templateDirectory!public! !
+!STDocConfig categoriesFor: #templateFileName!public! !
+!STDocConfig categoriesFor: #templateName!accessing!public! !
+!STDocConfig categoriesFor: #templateName:!accessing!public! !
 
-DOCMethod guid: (GUID fromString: '{29133369-FEFE-4CF1-942D-E5553BC40746}')!
-DOCMethod comment: ''!
-!DOCMethod categoriesForClass!Unclassified! !
-!DOCMethod methodsFor!
+STDocMethod guid: (GUID fromString: '{29133369-fefe-4cf1-942d-e5553bc40746}')!
+STDocMethod comment: ''!
+!STDocMethod categoriesForClass!Unclassified! !
+!STDocMethod methodsFor!
 
 <= aDOCMethod
 	^self species = aDOCMethod species and: 
@@ -1115,7 +1121,7 @@ DOCMethod comment: ''!
 						and: [self methodObject selector < aDOCMethod methodObject selector]]]!
 
 comment
-	^comment ifNil: [comment := DOCComment forMethod: self methodObject]!
+	^comment ifNil: [comment := STDocComment forMethod: self methodObject]!
 
 comment: anObject
 	comment := anObject!
@@ -1126,22 +1132,22 @@ definition
 	^definition!
 
 definitionIDOn: aStream
-	DOCSUtils makeIDString: self definition on: aStream!
+	STDocUtil makeIDString: self definition on: aStream!
 
 methodObject
 	^methodObject!
 
 methodObject: anObject
 	methodObject := anObject! !
-!DOCMethod categoriesFor: #<=!public! !
-!DOCMethod categoriesFor: #comment!accessing!public! !
-!DOCMethod categoriesFor: #comment:!accessing!public! !
-!DOCMethod categoriesFor: #definition!public! !
-!DOCMethod categoriesFor: #definitionIDOn:!public! !
-!DOCMethod categoriesFor: #methodObject!accessing!public! !
-!DOCMethod categoriesFor: #methodObject:!accessing!public! !
+!STDocMethod categoriesFor: #<=!public! !
+!STDocMethod categoriesFor: #comment!accessing!public! !
+!STDocMethod categoriesFor: #comment:!accessing!public! !
+!STDocMethod categoriesFor: #definition!public! !
+!STDocMethod categoriesFor: #definitionIDOn:!public! !
+!STDocMethod categoriesFor: #methodObject!accessing!public! !
+!STDocMethod categoriesFor: #methodObject:!accessing!public! !
 
-!DOCMethod class methodsFor!
+!STDocMethod class methodsFor!
 
 for: aMethod
 	"Creates an instance for the specified method.
@@ -1151,16 +1157,16 @@ for: aMethod
 	^(self new)
 		methodObject: aMethod;
 		yourself! !
-!DOCMethod class categoriesFor: #for:!public! !
+!STDocMethod class categoriesFor: #for:!public! !
 
-DOCProcessor guid: (GUID fromString: '{C9C2770E-9F5C-4EDD-AF80-819FDF7FE214}')!
-DOCProcessor comment: 'The subclasses of this class are the ones that handle the documentation process and the template files.
+STDocProcessor guid: (GUID fromString: '{c9c2770e-9f5c-4edd-af80-819fdf7fe214}')!
+STDocProcessor comment: 'The subclasses of this class are the ones that handle the documentation process and the template files.
 A type of template is associated to each class.
 Each class has a different purpose and output. Some handle each class and makes documentation for them, other generates index files to navigate the files, other copy files and instantiates new documenters, etc.
 
 The class that invoques the documenters is the DOCSmalltalkManager when the documentation process starts.'!
-!DOCProcessor categoriesForClass!Unclassified! !
-!DOCProcessor methodsFor!
+!STDocProcessor categoriesForClass!Unclassified! !
+!STDocProcessor methodsFor!
 
 fileName
 	^fileName!
@@ -1204,26 +1210,26 @@ processDoc
 	"Executes the main purpose of the documenter, in general generates the output documentation files"
 
 	^self subclassResponsibility! !
-!DOCProcessor categoriesFor: #fileName!accessing!public! !
-!DOCProcessor categoriesFor: #fileName:!accessing!public! !
-!DOCProcessor categoriesFor: #loadConfig:!parsing!public! !
-!DOCProcessor categoriesFor: #loadFile!parsing!public! !
-!DOCProcessor categoriesFor: #manager!accessing!public! !
-!DOCProcessor categoriesFor: #manager:!accessing!public! !
-!DOCProcessor categoriesFor: #parseDocument:!parsing!public! !
-!DOCProcessor categoriesFor: #possibleChildTypes!public! !
-!DOCProcessor categoriesFor: #processDoc!document!public! !
+!STDocProcessor categoriesFor: #fileName!accessing!public! !
+!STDocProcessor categoriesFor: #fileName:!accessing!public! !
+!STDocProcessor categoriesFor: #loadConfig:!parsing!public! !
+!STDocProcessor categoriesFor: #loadFile!parsing!public! !
+!STDocProcessor categoriesFor: #manager!accessing!public! !
+!STDocProcessor categoriesFor: #manager:!accessing!public! !
+!STDocProcessor categoriesFor: #parseDocument:!parsing!public! !
+!STDocProcessor categoriesFor: #possibleChildTypes!public! !
+!STDocProcessor categoriesFor: #processDoc!document!public! !
 
-!DOCProcessor class methodsFor!
+!STDocProcessor class methodsFor!
 
-forManager: aDOCSmalltalkManager 
+forManager: aDOCSmalltalkManager
 	^(self basicNew)
 		manager: aDOCSmalltalkManager;
 		initialize;
 		yourself!
 
-processorClassFor: processorName ifAbsent: aBlock 
-	^self allSubclasses 
+processorClassFor: processorName ifAbsent: aBlock
+	^self allSubclasses
 		detect: [:procC | procC processorName notNil and: [procC processorName = processorName]]
 		ifNone: [aBlock value]!
 
@@ -1231,14 +1237,14 @@ processorName
 	"The name of the listener used in the XML files"
 
 	^self subclassResponsibility! !
-!DOCProcessor class categoriesFor: #forManager:!public! !
-!DOCProcessor class categoriesFor: #processorClassFor:ifAbsent:!private! !
-!DOCProcessor class categoriesFor: #processorName!private! !
+!STDocProcessor class categoriesFor: #forManager:!public! !
+!STDocProcessor class categoriesFor: #processorClassFor:ifAbsent:!private! !
+!STDocProcessor class categoriesFor: #processorName!private! !
 
-DOCRenderCmd guid: (GUID fromString: '{637B76E4-9B2E-41D4-9A3E-5BE530042B80}')!
-DOCRenderCmd comment: ''!
-!DOCRenderCmd categoriesForClass!Unclassified! !
-!DOCRenderCmd methodsFor!
+STDocRenderCmd guid: (GUID fromString: '{637b76e4-9b2e-41d4-9a3e-5be530042b80}')!
+STDocRenderCmd comment: ''!
+!STDocRenderCmd categoriesForClass!Unclassified! !
+!STDocRenderCmd methodsFor!
 
 execute: obj on: aStream
 	^self subclassResponsibility!
@@ -1248,28 +1254,28 @@ renderer
 
 renderer: anObject
 	renderer := anObject! !
-!DOCRenderCmd categoriesFor: #execute:on:!public! !
-!DOCRenderCmd categoriesFor: #renderer!accessing!private! !
-!DOCRenderCmd categoriesFor: #renderer:!accessing!private! !
+!STDocRenderCmd categoriesFor: #execute:on:!public! !
+!STDocRenderCmd categoriesFor: #renderer!accessing!private! !
+!STDocRenderCmd categoriesFor: #renderer:!accessing!private! !
 
-!DOCRenderCmd class methodsFor!
+!STDocRenderCmd class methodsFor!
 
 for: aRenderer
 	^(self new)
 		renderer: aRenderer;
 		yourself! !
-!DOCRenderCmd class categoriesFor: #for:!public! !
+!STDocRenderCmd class categoriesFor: #for:!public! !
 
-DOCRenderer guid: (GUID fromString: '{CE39D2A6-0443-46FB-8114-A0A267B389BC}')!
-DOCRenderer comment: 'This class handles the rendering of the documentation. They are instantiated from the XML.
+STDocRenderer guid: (GUID fromString: '{ce39d2a6-0443-46fb-8114-a0a267b389bc}')!
+STDocRenderer comment: 'This class handles the rendering of the documentation. They are instantiated from the XML.
 It has two parts, the first is the template, where some special tags are replaced with information that the render formats. The other part is the child templates, those same tags make the child renderers of this render to print it''s data.
 
 @var manager the manager that contains the renderer
 @var commands the commands that are replaced with information. Each renderer has different commands
 @var childRenderers a collection of child renderers identified by an id
 @var parent if this render is a child render it contains the renderer that has this renderer as a child, otherwise is nil'!
-!DOCRenderer categoriesForClass!Unclassified! !
-!DOCRenderer methodsFor!
+!STDocRenderer categoriesForClass!Unclassified! !
+!STDocRenderer methodsFor!
 
 addCommand: commandMethod params: paramArray
 	"Adds a command to be executed at the end of the command list.
@@ -1289,7 +1295,7 @@ addCommand: commandMethod params: paramArray to: aCollection
 	@param paramArray an array with parameters
 	@param aCollection a collection where to add"
 
-	aCollection add: ((DOCTextCmd for: self)
+	aCollection add: ((STDocTextCmd for: self)
 				name: commandMethod;
 				params: paramArray;
 				yourself)!
@@ -1317,7 +1323,7 @@ container
 	@returns the processor that contains the renderer or nil"
 
 	| container |
-	[(container := self parent) isKindOf: DOCRenderer] whileTrue.
+	[(container := self parent) isKindOf: STDocRenderer] whileTrue.
 	^container!
 
 getObjectsOf: aDOCClass
@@ -1366,7 +1372,7 @@ parseCommandParams: aCmdStr
 	escaped := false.
 	[str atEnd] whileFalse: 
 			[| param |
-			param := DOCSUtils stringFrom: str
+			param := STDocUtil stringFrom: str
 						filterBlock: 
 							[:c |
 							escaped
@@ -1390,12 +1396,14 @@ parseCondition: node
 			[op := node attributes at: 'op'
 						ifAbsent: [self error: 'Condición invalida, no contiene el atributo "op" o "predefined"'].
 			(op sameAs: 'and')
-				ifTrue: [cond := DOCAnd new]
+				ifTrue: [cond := STDocAnd new]
 				ifFalse: 
-					[(op sameAs: 'or') ifTrue: [cond := DOCOr new] ifFalse: [self error: 'Operador ' , op , ' inválido']].
+					[(op sameAs: 'or')
+						ifTrue: [cond := STDocOr new]
+						ifFalse: [self error: 'Operador ' , op , ' inválido']].
 			cond conditions: (node childNodes collect: [:condNode | self parseCondition: condNode]).
 			^cond].
-	^(DOCPredefinedCond new)
+	^(STDocPredefinedCond new)
 		condition: predefined;
 		renderer: self;
 		yourself!
@@ -1405,7 +1413,7 @@ parseConditionFrom: node
 
 parseConditionFrom: node on: cmdCol
 	| cmd |
-	cmd := (DOCCondCmd new)
+	cmd := (STDocCondCmd new)
 				condition: (self parseCondition: (node selectSingleNode: './condition'));
 				yourself.
 	self
@@ -1441,7 +1449,7 @@ parseNode: aNode
 	(aNode selectNodes: './/render') do: 
 			[:childNode |
 			| childRenderer |
-			childRenderer := DOCRenderer
+			childRenderer := STDocRenderer
 						createRenderer: childNode
 						manager: self manager
 						parent: self.
@@ -1520,7 +1528,7 @@ parseTextFrom: aStream on: aCmdCol
 possibleChildTypes
 	"Returns a Set of classes of renderers that can be childs of this type of renderer"
 
-	^Set with: DOCTextRenderer!
+	^Set with: STDocTextRenderer!
 
 printClassLink: aClass currentClass: curClass on: aStream
 	"Private - Prints on the stream a class link if the class exists in the classes that are going to be rendered
@@ -1686,41 +1694,41 @@ renderText: anObject params: params on: aStream
 	@param aStream the stream where the text is going to be written"
 
 	aStream nextPutAll: params first! !
-!DOCRenderer categoriesFor: #addCommand:params:!parsing!public! !
-!DOCRenderer categoriesFor: #addCommand:params:to:!parsing!public! !
-!DOCRenderer categoriesFor: #availableCommands!commands!public!rendering! !
-!DOCRenderer categoriesFor: #bodyCommands!accessing!public! !
-!DOCRenderer categoriesFor: #bodyCommands:!accessing!public! !
-!DOCRenderer categoriesFor: #container!public! !
-!DOCRenderer categoriesFor: #getObjectsOf:!private!rendering! !
-!DOCRenderer categoriesFor: #initialize!private! !
-!DOCRenderer categoriesFor: #isTrue:of:!public!rendering! !
-!DOCRenderer categoriesFor: #manager!accessing!public! !
-!DOCRenderer categoriesFor: #manager:!accessing!public! !
-!DOCRenderer categoriesFor: #parent!accessing!public! !
-!DOCRenderer categoriesFor: #parent:!accessing!public! !
-!DOCRenderer categoriesFor: #parseCommandName:!parsing!private! !
-!DOCRenderer categoriesFor: #parseCommandParams:!parsing!private! !
-!DOCRenderer categoriesFor: #parseCondition:!parsing!private! !
-!DOCRenderer categoriesFor: #parseConditionFrom:!parsing!private! !
-!DOCRenderer categoriesFor: #parseConditionFrom:on:!parsing!private! !
-!DOCRenderer categoriesFor: #parseNode:!parsing!public! !
-!DOCRenderer categoriesFor: #parseNode:nodeName:commandsOn:!parsing!private! !
-!DOCRenderer categoriesFor: #parseTextFrom:on:!parsing!private! !
-!DOCRenderer categoriesFor: #possibleChildTypes!public! !
-!DOCRenderer categoriesFor: #printClassLink:currentClass:on:!private! !
-!DOCRenderer categoriesFor: #printPackageLinkOf:on:!private! !
-!DOCRenderer categoriesFor: #render:on:!public!rendering! !
-!DOCRenderer categoriesFor: #renderChild:params:on:!commands!public!rendering! !
-!DOCRenderer categoriesFor: #renderCommands:on:for:!private!rendering! !
-!DOCRenderer categoriesFor: #renderCommandsOn:for:!private!rendering! !
-!DOCRenderer categoriesFor: #renderLabel:params:on:!commands!public!rendering! !
-!DOCRenderer categoriesFor: #renderTableFor:renderBlock:tableClass:colClass:columns:cellspacing:on:!private!rendering! !
-!DOCRenderer categoriesFor: #renderText:params:on:!commands!public!rendering! !
+!STDocRenderer categoriesFor: #addCommand:params:!parsing!public! !
+!STDocRenderer categoriesFor: #addCommand:params:to:!parsing!public! !
+!STDocRenderer categoriesFor: #availableCommands!commands!public!rendering! !
+!STDocRenderer categoriesFor: #bodyCommands!accessing!public! !
+!STDocRenderer categoriesFor: #bodyCommands:!accessing!public! !
+!STDocRenderer categoriesFor: #container!public! !
+!STDocRenderer categoriesFor: #getObjectsOf:!private!rendering! !
+!STDocRenderer categoriesFor: #initialize!private! !
+!STDocRenderer categoriesFor: #isTrue:of:!public!rendering! !
+!STDocRenderer categoriesFor: #manager!accessing!public! !
+!STDocRenderer categoriesFor: #manager:!accessing!public! !
+!STDocRenderer categoriesFor: #parent!accessing!public! !
+!STDocRenderer categoriesFor: #parent:!accessing!public! !
+!STDocRenderer categoriesFor: #parseCommandName:!parsing!private! !
+!STDocRenderer categoriesFor: #parseCommandParams:!parsing!private! !
+!STDocRenderer categoriesFor: #parseCondition:!parsing!private! !
+!STDocRenderer categoriesFor: #parseConditionFrom:!parsing!private! !
+!STDocRenderer categoriesFor: #parseConditionFrom:on:!parsing!private! !
+!STDocRenderer categoriesFor: #parseNode:!parsing!public! !
+!STDocRenderer categoriesFor: #parseNode:nodeName:commandsOn:!parsing!private! !
+!STDocRenderer categoriesFor: #parseTextFrom:on:!parsing!private! !
+!STDocRenderer categoriesFor: #possibleChildTypes!public! !
+!STDocRenderer categoriesFor: #printClassLink:currentClass:on:!private! !
+!STDocRenderer categoriesFor: #printPackageLinkOf:on:!private! !
+!STDocRenderer categoriesFor: #render:on:!public!rendering! !
+!STDocRenderer categoriesFor: #renderChild:params:on:!commands!public!rendering! !
+!STDocRenderer categoriesFor: #renderCommands:on:for:!private!rendering! !
+!STDocRenderer categoriesFor: #renderCommandsOn:for:!private!rendering! !
+!STDocRenderer categoriesFor: #renderLabel:params:on:!commands!public!rendering! !
+!STDocRenderer categoriesFor: #renderTableFor:renderBlock:tableClass:colClass:columns:cellspacing:on:!private!rendering! !
+!STDocRenderer categoriesFor: #renderText:params:on:!commands!public!rendering! !
 
-!DOCRenderer class methodsFor!
+!STDocRenderer class methodsFor!
 
-createRenderer: aNode manager: aManager parent: aParent 
+createRenderer: aNode manager: aManager parent: aParent
 	"Instantiates a renderer class and initializes it's variables using an XMLNode parsed from the template file.
 
 	@param aNode the XML node
@@ -1731,17 +1739,17 @@ createRenderer: aNode manager: aManager parent: aParent
 	rendererName := aNode attributes at: 'type' ifAbsent: ['text'].
 	rendererClass := self renderClassFor: rendererName
 				ifAbsent: [self parseError: 'Invalid render type ' , rendererName].
-	(aParent possibleChildTypes includes: rendererClass) 
+	(aParent possibleChildTypes includes: rendererClass)
 		ifFalse: 
-			[self 
-				parseError: 'Renderers of type ' , aParent class rendererName 
-						, ' can''t contain renderers of type ' , rendererClass rendererName].
+			[self
+				parseError: 'Renderers of type ' , aParent class rendererName , ' can''t contain renderers of type '
+						, rendererClass rendererName].
 	renderer := rendererClass forManager: aManager.
 	renderer parseNode: aNode.
 	renderer parent: aParent.
 	^renderer!
 
-forManager: aDOCSmalltalkManager 
+forManager: aDOCSmalltalkManager
 	"Instantiates a Renderer for the specified manager
 	
 	@param aDOCSmalltalkManager the manager for the renderer object"
@@ -1751,8 +1759,8 @@ forManager: aDOCSmalltalkManager
 		initialize;
 		yourself!
 
-renderClassFor: rendererName ifAbsent: aBlock 
-	^self allSubclasses 
+renderClassFor: rendererName ifAbsent: aBlock
+	^self allSubclasses
 		detect: [:renderC | renderC rendererName notNil and: [renderC rendererName = rendererName]]
 		ifNone: [aBlock value]!
 
@@ -1760,13 +1768,13 @@ rendererName
 	"This is a custom name used to identify the renderer in the xml code, each renderer must have it's own name"
 
 	^self subclassResponsibility! !
-!DOCRenderer class categoriesFor: #createRenderer:manager:parent:!public! !
-!DOCRenderer class categoriesFor: #forManager:!public! !
-!DOCRenderer class categoriesFor: #renderClassFor:ifAbsent:!private! !
-!DOCRenderer class categoriesFor: #rendererName!public! !
+!STDocRenderer class categoriesFor: #createRenderer:manager:parent:!public! !
+!STDocRenderer class categoriesFor: #forManager:!public! !
+!STDocRenderer class categoriesFor: #renderClassFor:ifAbsent:!private! !
+!STDocRenderer class categoriesFor: #rendererName!public! !
 
-DOCSmalltalkManager guid: (GUID fromString: '{5AE38F9C-D577-4E86-90AD-2A90678FF390}')!
-DOCSmalltalkManager comment: 'This manager handles the documentation process. It has a configuration object that specifies wich objects are going to be rendered, the template that''s going to be used, the output directory and the classes that will be documented.
+STDocSmalltalkManager guid: (GUID fromString: '{5ae38f9c-d577-4e86-90ad-2a90678ff390}')!
+STDocSmalltalkManager comment: 'This manager handles the documentation process. It has a configuration object that specifies wich objects are going to be rendered, the template that''s going to be used, the output directory and the classes that will be documented.
 
 It has a bunch of listeners that handles the rendering process. Those listeners are parsed from the template file.
 
@@ -1775,8 +1783,8 @@ To document you first have to set the configuration and then start the process b
 Writer: Javier
 1st Assistant: Leo Arias (A.K.A. "Capa Basica" Designer)
 CoPilot: Svanlacke (A.K.A. Reprimed Hawk)'!
-!DOCSmalltalkManager categoriesForClass!Unclassified! !
-!DOCSmalltalkManager methodsFor!
+!STDocSmalltalkManager categoriesForClass!Unclassified! !
+!STDocSmalltalkManager methodsFor!
 
 addProcessor: aDOCProcessor
 	"Private - Adds a processor to the processor collection and sets this manager as the processor's manager.
@@ -1877,7 +1885,7 @@ inferedPackages
 initialize
 	super initialize.
 	self resetProcessors.
-	config := DOCConfig new.
+	config := STDocConfig new.
 	classes := Set new.
 	configKeys := LookupTable new.
 	self initializeLabels!
@@ -1906,7 +1914,7 @@ initializeLabels
 		labelAt: 'PROJECT_VER' put: '1.0';
 		labelAt: 'YEAR' put: Date today year displayString;
 		labelAt: 'TIMESTAMP' put: fecha contents;
-		labelAt: 'COPYRIGHT' put: '©CIDESO 2007'!
+		labelAt: 'COPYRIGHT' put: '©Organization 2007'!
 
 labelAt: aKey
 	"Returns a string with the label associated to the key
@@ -1978,7 +1986,7 @@ parseTemplate
 
 	| template |
 	self resetProcessors.
-	template := DOCTemplateSpec forManager: self.
+	template := STDocTemplateSpec forManager: self.
 	template fileName: (self config makeTemplateAbsolute: 'template.xml').
 	template loadFile.
 	self addProcessor: template!
@@ -2045,7 +2053,7 @@ setClasses: stClasses
 	| cls |
 	cls := Set new.
 	self classes: Set new.
-	cls addAll: (stClasses collect: [:c | DOCClass forClass: c manager: self]).
+	cls addAll: (stClasses collect: [:c | STDocClass forClass: c manager: self]).
 	self classes addAll: cls.
 	self config renderRelatedClasses ifTrue: [cls do: [:c | self classes addAll: c relatedClasses]].
 	self config renderSuperclasses ifTrue: [cls do: [:c | self classes addAll: c superClasses]].
@@ -2056,59 +2064,59 @@ stClassSet
 	stClassSet := IdentitySet new.
 	self classesDo: [:c | stClassSet add: c classObject].
 	^stClassSet! !
-!DOCSmalltalkManager categoriesFor: #addProcessor:!private! !
-!DOCSmalltalkManager categoriesFor: #blankIcon!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #blankIcon:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #classes!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #classes:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #classesDo:!private! !
-!DOCSmalltalkManager categoriesFor: #classFileName:!public! !
-!DOCSmalltalkManager categoriesFor: #classIcon!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #classIcon:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #config!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #config:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #configKeys!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #configKeys:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #createOutFileNamed:!public! !
-!DOCSmalltalkManager categoriesFor: #defaultStyle!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #defaultStyle:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #imageTag:!public! !
-!DOCSmalltalkManager categoriesFor: #includesClass:!public! !
-!DOCSmalltalkManager categoriesFor: #includesPackage:!public! !
-!DOCSmalltalkManager categoriesFor: #inferedPackages!public! !
-!DOCSmalltalkManager categoriesFor: #initialize!private! !
-!DOCSmalltalkManager categoriesFor: #initializeDoc!private! !
-!DOCSmalltalkManager categoriesFor: #initializeLabels!private! !
-!DOCSmalltalkManager categoriesFor: #labelAt:!public! !
-!DOCSmalltalkManager categoriesFor: #labelAt:put:!public! !
-!DOCSmalltalkManager categoriesFor: #labelDictionary!public! !
-!DOCSmalltalkManager categoriesFor: #makeDoc:!public! !
-!DOCSmalltalkManager categoriesFor: #overIcon!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #overIcon:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #packageFileName:!public! !
-!DOCSmalltalkManager categoriesFor: #packages!public! !
-!DOCSmalltalkManager categoriesFor: #packages:!public! !
-!DOCSmalltalkManager categoriesFor: #parseTemplate!private! !
-!DOCSmalltalkManager categoriesFor: #privIcon!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #privIcon:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #processors!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #processors:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #processorsDo:!private! !
-!DOCSmalltalkManager categoriesFor: #progressText:!public! !
-!DOCSmalltalkManager categoriesFor: #progressValue:!public! !
-!DOCSmalltalkManager categoriesFor: #pubIcon!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #pubIcon:!accessing!public! !
-!DOCSmalltalkManager categoriesFor: #reset!public! !
-!DOCSmalltalkManager categoriesFor: #resetProcessors!public! !
-!DOCSmalltalkManager categoriesFor: #searchClass:!public! !
-!DOCSmalltalkManager categoriesFor: #setClasses:!public! !
-!DOCSmalltalkManager categoriesFor: #stClassSet!private! !
+!STDocSmalltalkManager categoriesFor: #addProcessor:!private! !
+!STDocSmalltalkManager categoriesFor: #blankIcon!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #blankIcon:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #classes!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #classes:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #classesDo:!private! !
+!STDocSmalltalkManager categoriesFor: #classFileName:!public! !
+!STDocSmalltalkManager categoriesFor: #classIcon!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #classIcon:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #config!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #config:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #configKeys!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #configKeys:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #createOutFileNamed:!public! !
+!STDocSmalltalkManager categoriesFor: #defaultStyle!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #defaultStyle:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #imageTag:!public! !
+!STDocSmalltalkManager categoriesFor: #includesClass:!public! !
+!STDocSmalltalkManager categoriesFor: #includesPackage:!public! !
+!STDocSmalltalkManager categoriesFor: #inferedPackages!public! !
+!STDocSmalltalkManager categoriesFor: #initialize!private! !
+!STDocSmalltalkManager categoriesFor: #initializeDoc!private! !
+!STDocSmalltalkManager categoriesFor: #initializeLabels!private! !
+!STDocSmalltalkManager categoriesFor: #labelAt:!public! !
+!STDocSmalltalkManager categoriesFor: #labelAt:put:!public! !
+!STDocSmalltalkManager categoriesFor: #labelDictionary!public! !
+!STDocSmalltalkManager categoriesFor: #makeDoc:!public! !
+!STDocSmalltalkManager categoriesFor: #overIcon!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #overIcon:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #packageFileName:!public! !
+!STDocSmalltalkManager categoriesFor: #packages!public! !
+!STDocSmalltalkManager categoriesFor: #packages:!public! !
+!STDocSmalltalkManager categoriesFor: #parseTemplate!private! !
+!STDocSmalltalkManager categoriesFor: #privIcon!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #privIcon:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #processors!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #processors:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #processorsDo:!private! !
+!STDocSmalltalkManager categoriesFor: #progressText:!public! !
+!STDocSmalltalkManager categoriesFor: #progressValue:!public! !
+!STDocSmalltalkManager categoriesFor: #pubIcon!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #pubIcon:!accessing!public! !
+!STDocSmalltalkManager categoriesFor: #reset!public! !
+!STDocSmalltalkManager categoriesFor: #resetProcessors!public! !
+!STDocSmalltalkManager categoriesFor: #searchClass:!public! !
+!STDocSmalltalkManager categoriesFor: #setClasses:!public! !
+!STDocSmalltalkManager categoriesFor: #stClassSet!private! !
 
-DOCSUtils guid: (GUID fromString: '{8235FD37-C1CE-4A8F-9D60-4E92EE9905F8}')!
-DOCSUtils comment: 'This class is used as a bag of functions to process strings and streams.
+STDocUtil guid: (GUID fromString: '{8235fd37-c1ce-4a8f-9d60-4e92ee9905f8}')!
+STDocUtil comment: 'This class is used as a bag of functions to process strings and streams.
 Al kinds of common functions are included here, most of them are for parsing texts'!
-!DOCSUtils categoriesForClass!Unclassified! !
-!DOCSUtils class methodsFor!
+!STDocUtil categoriesForClass!Unclassified! !
+!STDocUtil class methodsFor!
 
 charToHTML: char
 	^char == Character lf
@@ -2274,31 +2282,31 @@ stringFrom: aStream upTo: aBlock
 	self consume: aStream
 		do: [:c | (aBlock value: c) ifTrue: [^result contents] ifFalse: [result nextPut: c]].
 	^result isEmpty ifTrue: [nil] ifFalse: [result contents]! !
-!DOCSUtils class categoriesFor: #charToHTML:!private! !
-!DOCSUtils class categoriesFor: #consume:do:!public! !
-!DOCSUtils class categoriesFor: #firstWordOf:!public! !
-!DOCSUtils class categoriesFor: #ignore:where:!public! !
-!DOCSUtils class categoriesFor: #ignoreFrom:upTo:!public! !
-!DOCSUtils class categoriesFor: #isValidTag:!private! !
-!DOCSUtils class categoriesFor: #makeHTMLString:on:!public! !
-!DOCSUtils class categoriesFor: #makeIDString:!public! !
-!DOCSUtils class categoriesFor: #makeIDString:on:!public! !
-!DOCSUtils class categoriesFor: #makeTag:on:!private! !
-!DOCSUtils class categoriesFor: #stringFrom:filterBlock:!public! !
-!DOCSUtils class categoriesFor: #stringFrom:from:to:!public! !
-!DOCSUtils class categoriesFor: #stringFrom:upTo:!public! !
+!STDocUtil class categoriesFor: #charToHTML:!private! !
+!STDocUtil class categoriesFor: #consume:do:!public! !
+!STDocUtil class categoriesFor: #firstWordOf:!public! !
+!STDocUtil class categoriesFor: #ignore:where:!public! !
+!STDocUtil class categoriesFor: #ignoreFrom:upTo:!public! !
+!STDocUtil class categoriesFor: #isValidTag:!private! !
+!STDocUtil class categoriesFor: #makeHTMLString:on:!public! !
+!STDocUtil class categoriesFor: #makeIDString:!public! !
+!STDocUtil class categoriesFor: #makeIDString:on:!public! !
+!STDocUtil class categoriesFor: #makeTag:on:!private! !
+!STDocUtil class categoriesFor: #stringFrom:filterBlock:!public! !
+!STDocUtil class categoriesFor: #stringFrom:from:to:!public! !
+!STDocUtil class categoriesFor: #stringFrom:upTo:!public! !
 
-DOCVariable guid: (GUID fromString: '{B766EE9C-5DFB-479A-BA71-D12299382387}')!
-DOCVariable comment: ''!
-!DOCVariable categoriesForClass!Unclassified! !
-!DOCVariable methodsFor!
+STDocVariable guid: (GUID fromString: '{b766ee9c-5dfb-479a-ba71-d12299382387}')!
+STDocVariable comment: ''!
+!STDocVariable categoriesForClass!Unclassified! !
+!STDocVariable methodsFor!
 
 comment
 	| str |
 	(self docClass docComment attributeTable at: 'var' ifAbsent: [^'']) do: 
 			[:string |
 			str := string readStream.
-			(DOCSUtils firstWordOf: str) = self name ifTrue: [^str upToEnd]].
+			(STDocUtil firstWordOf: str) = self name ifTrue: [^str upToEnd]].
 	^''!
 
 docClass
@@ -2341,19 +2349,19 @@ type
 
 type: anObject
 	type := anObject! !
-!DOCVariable categoriesFor: #comment!public! !
-!DOCVariable categoriesFor: #docClass!accessing!public! !
-!DOCVariable categoriesFor: #docClass:!accessing!public! !
-!DOCVariable categoriesFor: #firstWordOf:!private! !
-!DOCVariable categoriesFor: #isClass!public! !
-!DOCVariable categoriesFor: #isClassInst!public! !
-!DOCVariable categoriesFor: #isInst!public! !
-!DOCVariable categoriesFor: #name!accessing!public! !
-!DOCVariable categoriesFor: #name:!accessing!public! !
-!DOCVariable categoriesFor: #type!accessing!public! !
-!DOCVariable categoriesFor: #type:!accessing!public! !
+!STDocVariable categoriesFor: #comment!public! !
+!STDocVariable categoriesFor: #docClass!accessing!public! !
+!STDocVariable categoriesFor: #docClass:!accessing!public! !
+!STDocVariable categoriesFor: #firstWordOf:!private! !
+!STDocVariable categoriesFor: #isClass!public! !
+!STDocVariable categoriesFor: #isClassInst!public! !
+!STDocVariable categoriesFor: #isInst!public! !
+!STDocVariable categoriesFor: #name!accessing!public! !
+!STDocVariable categoriesFor: #name:!accessing!public! !
+!STDocVariable categoriesFor: #type!accessing!public! !
+!STDocVariable categoriesFor: #type:!accessing!public! !
 
-!DOCVariable class methodsFor!
+!STDocVariable class methodsFor!
 
 forClassInstVar: aClass name: aString
 	^self
@@ -2379,15 +2387,15 @@ forType: aType class: aClass name: aString
 		docClass: aClass;
 		name: aString;
 		yourself! !
-!DOCVariable class categoriesFor: #forClassInstVar:name:!public! !
-!DOCVariable class categoriesFor: #forClassVar:name:!public! !
-!DOCVariable class categoriesFor: #forInstVar:name:!public! !
-!DOCVariable class categoriesFor: #forType:class:name:!public! !
+!STDocVariable class categoriesFor: #forClassInstVar:name:!public! !
+!STDocVariable class categoriesFor: #forClassVar:name:!public! !
+!STDocVariable class categoriesFor: #forInstVar:name:!public! !
+!STDocVariable class categoriesFor: #forType:class:name:!public! !
 
-DOCAnd guid: (GUID fromString: '{C1999A98-807B-4465-8668-E6FB3B1699EF}')!
-DOCAnd comment: ''!
-!DOCAnd categoriesForClass!Unclassified! !
-!DOCAnd methodsFor!
+STDocAnd guid: (GUID fromString: '{c1999a98-807b-4465-8668-e6fb3b1699ef}')!
+STDocAnd comment: ''!
+!STDocAnd categoriesForClass!Unclassified! !
+!STDocAnd methodsFor!
 
 conditions
 	^conditions!
@@ -2400,14 +2408,14 @@ value: anObject
 
 	self conditions isEmpty ifTrue: [^true].
 	^self conditions allSatisfy: [:cond | cond value: anObject]! !
-!DOCAnd categoriesFor: #conditions!accessing!public! !
-!DOCAnd categoriesFor: #conditions:!accessing!public! !
-!DOCAnd categoriesFor: #value:!public! !
+!STDocAnd categoriesFor: #conditions!accessing!public! !
+!STDocAnd categoriesFor: #conditions:!accessing!public! !
+!STDocAnd categoriesFor: #value:!public! !
 
-DOCOr guid: (GUID fromString: '{10E41E62-8400-4301-A827-FC14D205BEDE}')!
-DOCOr comment: ''!
-!DOCOr categoriesForClass!Unclassified! !
-!DOCOr methodsFor!
+STDocOr guid: (GUID fromString: '{10e41e62-8400-4301-a827-fc14d205bede}')!
+STDocOr comment: ''!
+!STDocOr categoriesForClass!Unclassified! !
+!STDocOr methodsFor!
 
 conditions
 	^conditions!
@@ -2420,14 +2428,14 @@ value: anObject
 
 	self conditions isEmpty ifTrue: [^true].
 	^self conditions anySatisfy: [:cond | cond value: anObject]! !
-!DOCOr categoriesFor: #conditions!accessing!public! !
-!DOCOr categoriesFor: #conditions:!accessing!public! !
-!DOCOr categoriesFor: #value:!public! !
+!STDocOr categoriesFor: #conditions!accessing!public! !
+!STDocOr categoriesFor: #conditions:!accessing!public! !
+!STDocOr categoriesFor: #value:!public! !
 
-DOCPredefinedCond guid: (GUID fromString: '{BC28FD66-6780-4568-B1B4-AAD654D01C0A}')!
-DOCPredefinedCond comment: ''!
-!DOCPredefinedCond categoriesForClass!Unclassified! !
-!DOCPredefinedCond methodsFor!
+STDocPredefinedCond guid: (GUID fromString: '{bc28fd66-6780-4568-b1b4-aad654d01c0a}')!
+STDocPredefinedCond comment: ''!
+!STDocPredefinedCond categoriesForClass!Unclassified! !
+!STDocPredefinedCond methodsFor!
 
 condition
 	^condition!
@@ -2445,30 +2453,30 @@ value: anObject
 	"@override"
 
 	^self renderer isTrue: self condition of: anObject! !
-!DOCPredefinedCond categoriesFor: #condition!accessing!public! !
-!DOCPredefinedCond categoriesFor: #condition:!accessing!public! !
-!DOCPredefinedCond categoriesFor: #renderer!accessing!public! !
-!DOCPredefinedCond categoriesFor: #renderer:!accessing!public! !
-!DOCPredefinedCond categoriesFor: #value:!public! !
+!STDocPredefinedCond categoriesFor: #condition!accessing!public! !
+!STDocPredefinedCond categoriesFor: #condition:!accessing!public! !
+!STDocPredefinedCond categoriesFor: #renderer!accessing!public! !
+!STDocPredefinedCond categoriesFor: #renderer:!accessing!public! !
+!STDocPredefinedCond categoriesFor: #value:!public! !
 
-!DOCPredefinedCond class methodsFor!
+!STDocPredefinedCond class methodsFor!
 
 str: conditionString on: aRenderer
 	^(self new)
 		renderer: aRenderer;
 		condition: conditionString;
 		yourself! !
-!DOCPredefinedCond class categoriesFor: #str:on:!public! !
+!STDocPredefinedCond class categoriesFor: #str:on:!public! !
 
-DOCClassTemplate guid: (GUID fromString: '{6B507EDB-98CB-4802-8589-29F466ACAB0E}')!
-DOCClassTemplate comment: 'Makes an HTML page using a template file that is parsed beforehand.
+STDocClassTemplate guid: (GUID fromString: '{6b507edb-98cb-4802-8589-29f466acab0e}')!
+STDocClassTemplate comment: 'Makes an HTML page using a template file that is parsed beforehand.
 The methods to render the classes are called by the DOCSmalltalkManager.
 
 The main rendering method is #processDoc. This method tells each one of the renderers to render itself for each class.
 
 This Documenter makes one file for each one of the classes that are going to be documented. The file name is the class name plus the html extension, if the class is Object the output file will be ''Object.html''.'!
-!DOCClassTemplate categoriesForClass!Unclassified! !
-!DOCClassTemplate methodsFor!
+!STDocClassTemplate categoriesForClass!Unclassified! !
+!STDocClassTemplate methodsFor!
 
 fileNameFor: anObject
 	"Generates the file name that's going to be wrote for this object.
@@ -2506,7 +2514,7 @@ parseDocument: anXMLNode
 			[:xmlNode |
 			xmlNode nodeName = 'render'
 				ifTrue: 
-					[renderers addLast: (DOCRenderer
+					[renderers addLast: (STDocRenderer
 								createRenderer: xmlNode
 								manager: self manager
 								parent: self)]
@@ -2516,10 +2524,10 @@ possibleChildTypes
 	"Returns a Set of classes of renderers that can be childs of this type of renderer"
 
 	^(super possibleChildTypes)
-		add: DOCClassRenderer;
-		add: DOCMethodRenderer;
-		add: DOCVariableRenderer;
-		add: DOCTextRenderer;
+		add: STDocClassRenderer;
+		add: STDocMethodRenderer;
+		add: STDocVariableRenderer;
+		add: STDocTextRenderer;
 		yourself!
 
 processDoc
@@ -2556,30 +2564,30 @@ renderize: anObject
 						, (self fileNameFor: anObject).
 	self renderers do: [:renderer | renderer render: anObject on: str].
 	^str close! !
-!DOCClassTemplate categoriesFor: #fileNameFor:!document!private! !
-!DOCClassTemplate categoriesFor: #initialize!private! !
-!DOCClassTemplate categoriesFor: #loadConfig:!parsing!public! !
-!DOCClassTemplate categoriesFor: #outDir!accessing!private! !
-!DOCClassTemplate categoriesFor: #outDir:!accessing!private! !
-!DOCClassTemplate categoriesFor: #parseDocument:!parsing!public! !
-!DOCClassTemplate categoriesFor: #possibleChildTypes!public! !
-!DOCClassTemplate categoriesFor: #processDoc!document!public! !
-!DOCClassTemplate categoriesFor: #renderers!accessing!private! !
-!DOCClassTemplate categoriesFor: #renderers:!accessing!private! !
-!DOCClassTemplate categoriesFor: #renderize:!document!private! !
+!STDocClassTemplate categoriesFor: #fileNameFor:!document!private! !
+!STDocClassTemplate categoriesFor: #initialize!private! !
+!STDocClassTemplate categoriesFor: #loadConfig:!parsing!public! !
+!STDocClassTemplate categoriesFor: #outDir!accessing!private! !
+!STDocClassTemplate categoriesFor: #outDir:!accessing!private! !
+!STDocClassTemplate categoriesFor: #parseDocument:!parsing!public! !
+!STDocClassTemplate categoriesFor: #possibleChildTypes!public! !
+!STDocClassTemplate categoriesFor: #processDoc!document!public! !
+!STDocClassTemplate categoriesFor: #renderers!accessing!private! !
+!STDocClassTemplate categoriesFor: #renderers:!accessing!private! !
+!STDocClassTemplate categoriesFor: #renderize:!document!private! !
 
-!DOCClassTemplate class methodsFor!
+!STDocClassTemplate class methodsFor!
 
 processorName
 	"The name of the listener used in the XML files"
 
 	^'class'! !
-!DOCClassTemplate class categoriesFor: #processorName!private! !
+!STDocClassTemplate class categoriesFor: #processorName!private! !
 
-DOCDefaultProcessor guid: (GUID fromString: '{7A50E236-F9B3-4FD3-8E6D-CFE47BFA2387}')!
-DOCDefaultProcessor comment: ''!
-!DOCDefaultProcessor categoriesForClass!Unclassified! !
-!DOCDefaultProcessor methodsFor!
+STDocDefaultProcessor guid: (GUID fromString: '{7a50e236-f9b3-4fd3-8e6d-cfe47bfa2387}')!
+STDocDefaultProcessor comment: ''!
+!STDocDefaultProcessor categoriesForClass!Unclassified! !
+!STDocDefaultProcessor methodsFor!
 
 initialize
 	super initialize.
@@ -2604,7 +2612,7 @@ parseDocument: anXMLNode
 			[:xmlNode |
 			xmlNode nodeName = 'render'
 				ifTrue: 
-					[renderers addLast: (DOCRenderer
+					[renderers addLast: (STDocRenderer
 								createRenderer: xmlNode
 								manager: self manager
 								parent: self)]
@@ -2614,7 +2622,7 @@ possibleChildTypes
 	"Returns a Set of classes of renderers that can be childs of this type of renderer"
 
 	^(super possibleChildTypes)
-		add: DOCTextRenderer;
+		add: STDocTextRenderer;
 		yourself!
 
 processDoc
@@ -2631,24 +2639,24 @@ renderers
 
 renderers: anObject
 	renderers := anObject! !
-!DOCDefaultProcessor categoriesFor: #initialize!private! !
-!DOCDefaultProcessor categoriesFor: #loadConfig:!parsing!public! !
-!DOCDefaultProcessor categoriesFor: #parseDocument:!parsing!public! !
-!DOCDefaultProcessor categoriesFor: #possibleChildTypes!public! !
-!DOCDefaultProcessor categoriesFor: #processDoc!document!public! !
-!DOCDefaultProcessor categoriesFor: #renderers!accessing!private! !
-!DOCDefaultProcessor categoriesFor: #renderers:!accessing!private! !
+!STDocDefaultProcessor categoriesFor: #initialize!private! !
+!STDocDefaultProcessor categoriesFor: #loadConfig:!parsing!public! !
+!STDocDefaultProcessor categoriesFor: #parseDocument:!parsing!public! !
+!STDocDefaultProcessor categoriesFor: #possibleChildTypes!public! !
+!STDocDefaultProcessor categoriesFor: #processDoc!document!public! !
+!STDocDefaultProcessor categoriesFor: #renderers!accessing!private! !
+!STDocDefaultProcessor categoriesFor: #renderers:!accessing!private! !
 
-!DOCDefaultProcessor class methodsFor!
+!STDocDefaultProcessor class methodsFor!
 
 processorName
 	"The name of the listener used in the XML files"
 
 	^'default'! !
-!DOCDefaultProcessor class categoriesFor: #processorName!private! !
+!STDocDefaultProcessor class categoriesFor: #processorName!private! !
 
-DOCIndexTemplate guid: (GUID fromString: '{7B81FD24-9ED2-4AA7-A278-317BB6E06F93}')!
-DOCIndexTemplate comment: 'This Documenter makes files to have quick access to the main documentation files, such as documentation for classes.
+STDocIndexTemplate guid: (GUID fromString: '{7b81fd24-9ed2-4aa7-a278-317bb6e06f93}')!
+STDocIndexTemplate comment: 'This Documenter makes files to have quick access to the main documentation files, such as documentation for classes.
 
 The available index types are:
 	- Hierarchy Index: The link for the classes are displayed as a hierarchy of all the classes involved.
@@ -2658,8 +2666,8 @@ The available index types are:
 It generates a file per index type, the name can be specified with the attribute outFile of the index tag in the index template file. If the attribute is not specified it uses a default name.
 
 The Index layout is parsed from an xml file. The index template also tells wich of the indexes are going to be used'!
-!DOCIndexTemplate categoriesForClass!Unclassified! !
-!DOCIndexTemplate methodsFor!
+!STDocIndexTemplate categoriesForClass!Unclassified! !
+!STDocIndexTemplate methodsFor!
 
 activeIndexesLinks
 	"Returns a collection of arrays of two elements of the indexes that are active and it's page.
@@ -2756,7 +2764,7 @@ parseDocument: anXMLNode
 						ifAbsent: [^self parseError: 'Index tag is missing the attribute "type"']) asSymbol]!
 
 parseRenderer: aNode type: indexType
-	renderers add: ((DOCIndexRenderer forManager: self manager)
+	renderers add: ((STDocIndexRenderer forManager: self manager)
 				parent: self;
 				type: indexType;
 				parseNode: aNode;
@@ -2766,8 +2774,8 @@ possibleChildTypes
 	"Returns a Set of classes of renderers that can be childs of this type of renderer"
 
 	^(super possibleChildTypes)
-		add: DOCIndexRenderer;
-		add: DOCTextRenderer;
+		add: STDocIndexRenderer;
+		add: STDocTextRenderer;
 		yourself!
 
 printClassLinkOf: aClass on: aStream
@@ -2915,45 +2923,45 @@ renderPackageIndexOn: aStream
 
 sortedCollection
 	^SortedCollection sortBlock: [:cArr1 :cArr2 | cArr1 first name <= cArr2 first name]! !
-!DOCIndexTemplate categoriesFor: #activeIndexesLinks!public!rendering! !
-!DOCIndexTemplate categoriesFor: #addClass:to:!hierarchy!private! !
-!DOCIndexTemplate categoriesFor: #addFullClass:!document!public! !
-!DOCIndexTemplate categoriesFor: #allClasses!hierarchy!private! !
-!DOCIndexTemplate categoriesFor: #classesDo:!hierarchy!private! !
-!DOCIndexTemplate categoriesFor: #indexTypeInfo!private! !
-!DOCIndexTemplate categoriesFor: #initialize!private! !
-!DOCIndexTemplate categoriesFor: #iterateClasses:do:!hierarchy!private! !
-!DOCIndexTemplate categoriesFor: #parseDocument:!parsing!public! !
-!DOCIndexTemplate categoriesFor: #parseRenderer:type:!parsing!private! !
-!DOCIndexTemplate categoriesFor: #possibleChildTypes!public! !
-!DOCIndexTemplate categoriesFor: #printClassLinkOf:on:!private!rendering! !
-!DOCIndexTemplate categoriesFor: #printPackageLinkOf:on:!private! !
-!DOCIndexTemplate categoriesFor: #processDoc!document!public!rendering! !
-!DOCIndexTemplate categoriesFor: #renderAlphabeticalIndexOn:!private!rendering! !
-!DOCIndexTemplate categoriesFor: #renderers!accessing!private! !
-!DOCIndexTemplate categoriesFor: #renderers:!accessing!private! !
-!DOCIndexTemplate categoriesFor: #renderHierarchyIndexOn:!private!rendering! !
-!DOCIndexTemplate categoriesFor: #renderIndex:on:!public!rendering! !
-!DOCIndexTemplate categoriesFor: #renderIndexName:on:!public! !
-!DOCIndexTemplate categoriesFor: #renderNode:sepparator:currentSep:on:!private!rendering! !
-!DOCIndexTemplate categoriesFor: #renderPackageIndexOn:!private!rendering! !
-!DOCIndexTemplate categoriesFor: #sortedCollection!private! !
+!STDocIndexTemplate categoriesFor: #activeIndexesLinks!public!rendering! !
+!STDocIndexTemplate categoriesFor: #addClass:to:!hierarchy!private! !
+!STDocIndexTemplate categoriesFor: #addFullClass:!document!public! !
+!STDocIndexTemplate categoriesFor: #allClasses!hierarchy!private! !
+!STDocIndexTemplate categoriesFor: #classesDo:!hierarchy!private! !
+!STDocIndexTemplate categoriesFor: #indexTypeInfo!private! !
+!STDocIndexTemplate categoriesFor: #initialize!private! !
+!STDocIndexTemplate categoriesFor: #iterateClasses:do:!hierarchy!private! !
+!STDocIndexTemplate categoriesFor: #parseDocument:!parsing!public! !
+!STDocIndexTemplate categoriesFor: #parseRenderer:type:!parsing!private! !
+!STDocIndexTemplate categoriesFor: #possibleChildTypes!public! !
+!STDocIndexTemplate categoriesFor: #printClassLinkOf:on:!private!rendering! !
+!STDocIndexTemplate categoriesFor: #printPackageLinkOf:on:!private! !
+!STDocIndexTemplate categoriesFor: #processDoc!document!public!rendering! !
+!STDocIndexTemplate categoriesFor: #renderAlphabeticalIndexOn:!private!rendering! !
+!STDocIndexTemplate categoriesFor: #renderers!accessing!private! !
+!STDocIndexTemplate categoriesFor: #renderers:!accessing!private! !
+!STDocIndexTemplate categoriesFor: #renderHierarchyIndexOn:!private!rendering! !
+!STDocIndexTemplate categoriesFor: #renderIndex:on:!public!rendering! !
+!STDocIndexTemplate categoriesFor: #renderIndexName:on:!public! !
+!STDocIndexTemplate categoriesFor: #renderNode:sepparator:currentSep:on:!private!rendering! !
+!STDocIndexTemplate categoriesFor: #renderPackageIndexOn:!private!rendering! !
+!STDocIndexTemplate categoriesFor: #sortedCollection!private! !
 
-!DOCIndexTemplate class methodsFor!
+!STDocIndexTemplate class methodsFor!
 
 processorName
 	"The name of the listener used in the XML files"
 
 	^'index'! !
-!DOCIndexTemplate class categoriesFor: #processorName!private! !
+!STDocIndexTemplate class categoriesFor: #processorName!private! !
 
-DOCTemplateSpec guid: (GUID fromString: '{FFF2E958-806F-4656-86F6-8F32DC98A44E}')!
-DOCTemplateSpec comment: 'This class handles the main template file ''template.xml''.
+STDocTemplateSpec guid: (GUID fromString: '{fff2e958-806f-4656-86f6-8f32dc98a44e}')!
+STDocTemplateSpec comment: 'This class handles the main template file ''template.xml''.
 It is the main Documenter, It instantiates all the other documenter based on the template file used.
 
 It also handles the copying of extra files that can be used in the pages.'!
-!DOCTemplateSpec categoriesForClass!Unclassified! !
-!DOCTemplateSpec methodsFor!
+!STDocTemplateSpec categoriesForClass!Unclassified! !
+!STDocTemplateSpec methodsFor!
 
 addConfig: aNode
 	"Sets a configuration item in the documentation manager.
@@ -3021,7 +3029,7 @@ addTemplateNode: aNode
 	fName := aNode attributes at: 'templateFile'
 				ifAbsent: [^self parseError: 'Missing "templateFile" attribute in a <template> tag'].
 	self manager
-		addProcessor: (((DOCProcessor processorClassFor: type
+		addProcessor: (((STDocProcessor processorClassFor: type
 				ifAbsent: [^self parseError: 'The type "' , type , '" of template does not exist'])
 					forManager: self manager)
 				fileName: fName;
@@ -3082,27 +3090,27 @@ processDoc
 			destDir := self manager config makeDocAbsolute: fCopy second.
 			(fCopy third or: [(File exists: destDir) not]) ifTrue: [File copy: srcDir to: destDir].
 			self manager progressValue: n / len * 100]! !
-!DOCTemplateSpec categoriesFor: #addConfig:!parsing!public! !
-!DOCTemplateSpec categoriesFor: #addFileNode:!parsing!public! !
-!DOCTemplateSpec categoriesFor: #addTemplateNode:!parsing!public! !
-!DOCTemplateSpec categoriesFor: #filesToCopy!accessing!private! !
-!DOCTemplateSpec categoriesFor: #filesToCopy:!accessing!private! !
-!DOCTemplateSpec categoriesFor: #initialize!private! !
-!DOCTemplateSpec categoriesFor: #parseDocument:!parsing!public! !
-!DOCTemplateSpec categoriesFor: #processDoc!document!public! !
+!STDocTemplateSpec categoriesFor: #addConfig:!parsing!public! !
+!STDocTemplateSpec categoriesFor: #addFileNode:!parsing!public! !
+!STDocTemplateSpec categoriesFor: #addTemplateNode:!parsing!public! !
+!STDocTemplateSpec categoriesFor: #filesToCopy!accessing!private! !
+!STDocTemplateSpec categoriesFor: #filesToCopy:!accessing!private! !
+!STDocTemplateSpec categoriesFor: #initialize!private! !
+!STDocTemplateSpec categoriesFor: #parseDocument:!parsing!public! !
+!STDocTemplateSpec categoriesFor: #processDoc!document!public! !
 
-!DOCTemplateSpec class methodsFor!
+!STDocTemplateSpec class methodsFor!
 
 processorName
 	"The name of the listener used in the XML files"
 
 	^'templateSpec'! !
-!DOCTemplateSpec class categoriesFor: #processorName!private! !
+!STDocTemplateSpec class categoriesFor: #processorName!private! !
 
-DOCPackageTemplate guid: (GUID fromString: '{3E42746E-FF22-497D-964F-2258FE110570}')!
-DOCPackageTemplate comment: ''!
-!DOCPackageTemplate categoriesForClass!Unclassified! !
-!DOCPackageTemplate methodsFor!
+STDocPackageTemplate guid: (GUID fromString: '{3e42746e-ff22-497d-964f-2258fe110570}')!
+STDocPackageTemplate comment: ''!
+!STDocPackageTemplate categoriesForClass!Unclassified! !
+!STDocPackageTemplate methodsFor!
 
 fileNameFor: anObject
 	"Generates the file name that's going to be wrote for this object.
@@ -3116,8 +3124,8 @@ possibleChildTypes
 	"Returns a Set of classes of renderers that can be childs of this type of renderer"
 
 	^(Set new)
-		add: DOCPackageRenderer;
-		add: DOCTextRenderer;
+		add: STDocPackageRenderer;
+		add: STDocTextRenderer;
 		yourself!
 
 processDoc
@@ -3136,22 +3144,22 @@ processDoc
 			aPackage := somePackages at: index.
 			self renderize: aPackage.
 			self manager progressValue: index / len * 100]! !
-!DOCPackageTemplate categoriesFor: #fileNameFor:!document!private! !
-!DOCPackageTemplate categoriesFor: #possibleChildTypes!public! !
-!DOCPackageTemplate categoriesFor: #processDoc!document!public! !
+!STDocPackageTemplate categoriesFor: #fileNameFor:!document!private! !
+!STDocPackageTemplate categoriesFor: #possibleChildTypes!public! !
+!STDocPackageTemplate categoriesFor: #processDoc!document!public! !
 
-!DOCPackageTemplate class methodsFor!
+!STDocPackageTemplate class methodsFor!
 
 processorName
 	"The name of the listener used in the XML files"
 
 	^'package'! !
-!DOCPackageTemplate class categoriesFor: #processorName!private! !
+!STDocPackageTemplate class categoriesFor: #processorName!private! !
 
-DOCCondCmd guid: (GUID fromString: '{88A937F1-D937-4D1F-BF82-3AFD9AFDC30E}')!
-DOCCondCmd comment: ''!
-!DOCCondCmd categoriesForClass!Unclassified! !
-!DOCCondCmd methodsFor!
+STDocCondCmd guid: (GUID fromString: '{88a937f1-d937-4d1f-bf82-3afd9afdc30e}')!
+STDocCondCmd comment: ''!
+!STDocCondCmd categoriesForClass!Unclassified! !
+!STDocCondCmd methodsFor!
 
 condition
 	^condition!
@@ -3180,19 +3188,19 @@ trueCommands
 
 trueCommands: anObject
 	trueCommands := anObject! !
-!DOCCondCmd categoriesFor: #condition!accessing!public! !
-!DOCCondCmd categoriesFor: #condition:!accessing!public! !
-!DOCCondCmd categoriesFor: #execute:on:!public! !
-!DOCCondCmd categoriesFor: #falseCommands!accessing!public! !
-!DOCCondCmd categoriesFor: #falseCommands:!accessing!public! !
-!DOCCondCmd categoriesFor: #initialize!private! !
-!DOCCondCmd categoriesFor: #trueCommands!accessing!public! !
-!DOCCondCmd categoriesFor: #trueCommands:!accessing!public! !
+!STDocCondCmd categoriesFor: #condition!accessing!public! !
+!STDocCondCmd categoriesFor: #condition:!accessing!public! !
+!STDocCondCmd categoriesFor: #execute:on:!public! !
+!STDocCondCmd categoriesFor: #falseCommands!accessing!public! !
+!STDocCondCmd categoriesFor: #falseCommands:!accessing!public! !
+!STDocCondCmd categoriesFor: #initialize!private! !
+!STDocCondCmd categoriesFor: #trueCommands!accessing!public! !
+!STDocCondCmd categoriesFor: #trueCommands:!accessing!public! !
 
-DOCTextCmd guid: (GUID fromString: '{7A8A3190-C10E-4536-914A-C75332CABFCD}')!
-DOCTextCmd comment: ''!
-!DOCTextCmd categoriesForClass!Unclassified! !
-!DOCTextCmd methodsFor!
+STDocTextCmd guid: (GUID fromString: '{7a8a3190-c10e-4536-914a-c75332cabfcd}')!
+STDocTextCmd comment: ''!
+!STDocTextCmd categoriesForClass!Unclassified! !
+!STDocTextCmd methodsFor!
 
 execute: obj on: aStream
 	| args |
@@ -3213,16 +3221,16 @@ params
 
 params: anObject
 	params := anObject! !
-!DOCTextCmd categoriesFor: #execute:on:!public! !
-!DOCTextCmd categoriesFor: #name!accessing!public! !
-!DOCTextCmd categoriesFor: #name:!accessing!public! !
-!DOCTextCmd categoriesFor: #params!accessing!public! !
-!DOCTextCmd categoriesFor: #params:!accessing!public! !
+!STDocTextCmd categoriesFor: #execute:on:!public! !
+!STDocTextCmd categoriesFor: #name!accessing!public! !
+!STDocTextCmd categoriesFor: #name:!accessing!public! !
+!STDocTextCmd categoriesFor: #params!accessing!public! !
+!STDocTextCmd categoriesFor: #params:!accessing!public! !
 
-DOCClassTemplateRenderer guid: (GUID fromString: '{7E802F1C-CB2D-4127-AD5B-14F2C1D5036B}')!
-DOCClassTemplateRenderer comment: ''!
-!DOCClassTemplateRenderer categoriesForClass!Unclassified! !
-!DOCClassTemplateRenderer methodsFor!
+STDocClassTemplateRenderer guid: (GUID fromString: '{7e802f1c-cb2d-4127-ad5b-14f2c1d5036b}')!
+STDocClassTemplateRenderer comment: ''!
+!STDocClassTemplateRenderer categoriesForClass!Unclassified! !
+!STDocClassTemplateRenderer methodsFor!
 
 parseNode: aNode
 	"It parses the renderer node and initializes the internal data.
@@ -3232,20 +3240,20 @@ parseNode: aNode
 	super parseNode: aNode.
 	header := (aNode selectSingleNode: './header') ifNil: [''] ifNotNil: [:titleNode | titleNode text].
 	footer := (aNode selectSingleNode: './footer') ifNil: [''] ifNotNil: [:titleNode | titleNode text]! !
-!DOCClassTemplateRenderer categoriesFor: #parseNode:!parsing!public! !
+!STDocClassTemplateRenderer categoriesFor: #parseNode:!parsing!public! !
 
-!DOCClassTemplateRenderer class methodsFor!
+!STDocClassTemplateRenderer class methodsFor!
 
 rendererName
 	"This is a custom name used to identify the renderer in the xml code, each renderer must have it's own name"
 
 	^nil! !
-!DOCClassTemplateRenderer class categoriesFor: #rendererName!public! !
+!STDocClassTemplateRenderer class categoriesFor: #rendererName!public! !
 
-DOCIndexRenderer guid: (GUID fromString: '{7C97BDA5-AE36-4E72-8D3B-ABC8F70DC07B}')!
-DOCIndexRenderer comment: ''!
-!DOCIndexRenderer categoriesForClass!Unclassified! !
-!DOCIndexRenderer methodsFor!
+STDocIndexRenderer guid: (GUID fromString: '{7c97bda5-ae36-4e72-8d3b-abc8f70dc07b}')!
+STDocIndexRenderer comment: ''!
+!STDocIndexRenderer categoriesForClass!Unclassified! !
+!STDocIndexRenderer methodsFor!
 
 availableCommands
 	"The available renderers that can be used to render objects
@@ -3339,29 +3347,29 @@ type
 
 type: anObject
 	type := anObject! !
-!DOCIndexRenderer categoriesFor: #availableCommands!public! !
-!DOCIndexRenderer categoriesFor: #fileName!accessing!public! !
-!DOCIndexRenderer categoriesFor: #fileName:!accessing!public! !
-!DOCIndexRenderer categoriesFor: #parseNode:!public! !
-!DOCIndexRenderer categoriesFor: #printClassLinkOf:on:!private! !
-!DOCIndexRenderer categoriesFor: #renderIndexBar:params:on:!public! !
-!DOCIndexRenderer categoriesFor: #renderIndexBody:params:on:!public! !
-!DOCIndexRenderer categoriesFor: #renderIndexName:params:on:!public! !
-!DOCIndexRenderer categoriesFor: #type!accessing!public! !
-!DOCIndexRenderer categoriesFor: #type:!accessing!public! !
+!STDocIndexRenderer categoriesFor: #availableCommands!public! !
+!STDocIndexRenderer categoriesFor: #fileName!accessing!public! !
+!STDocIndexRenderer categoriesFor: #fileName:!accessing!public! !
+!STDocIndexRenderer categoriesFor: #parseNode:!public! !
+!STDocIndexRenderer categoriesFor: #printClassLinkOf:on:!private! !
+!STDocIndexRenderer categoriesFor: #renderIndexBar:params:on:!public! !
+!STDocIndexRenderer categoriesFor: #renderIndexBody:params:on:!public! !
+!STDocIndexRenderer categoriesFor: #renderIndexName:params:on:!public! !
+!STDocIndexRenderer categoriesFor: #type!accessing!public! !
+!STDocIndexRenderer categoriesFor: #type:!accessing!public! !
 
-!DOCIndexRenderer class methodsFor!
+!STDocIndexRenderer class methodsFor!
 
 rendererName
 	"This is a custom name used to identify the renderer in the xml code, each renderer must have it's own name"
 
 	^'index'! !
-!DOCIndexRenderer class categoriesFor: #rendererName!public! !
+!STDocIndexRenderer class categoriesFor: #rendererName!public! !
 
-DOCPackageRenderer guid: (GUID fromString: '{8C9F976C-3AF6-416F-BA77-55E1B7735951}')!
-DOCPackageRenderer comment: ''!
-!DOCPackageRenderer categoriesForClass!Unclassified! !
-!DOCPackageRenderer methodsFor!
+STDocPackageRenderer guid: (GUID fromString: '{8c9f976c-3af6-416f-ba77-55e1b7735951}')!
+STDocPackageRenderer comment: ''!
+!STDocPackageRenderer categoriesForClass!Unclassified! !
+!STDocPackageRenderer methodsFor!
 
 availableCommands
 	"The available renderers that can be used to render objects
@@ -3420,7 +3428,7 @@ renderPackageComment: aPackage params: params on: aStream
 	@param params parameters for the render command
 	@param aStream the stream where you are going to render the result"
 
-	DOCSUtils makeHTMLString: (DOCComment for: aPackage comment) fullComment on: aStream!
+	STDocUtil makeHTMLString: (STDocComment for: aPackage comment) fullComment on: aStream!
 
 renderPackageDependencies: aPackage params: params on: aStream
 	"Genera una tabla con todos los paquetes de los cuales el paquete indicado precisa para existir.
@@ -3478,51 +3486,51 @@ renderPackageTable: somePackages tableClass: tableClass colClass: colClass on: a
 				columns: 4
 				cellspacing: '0'
 				on: aStream]! !
-!DOCPackageRenderer categoriesFor: #availableCommands!public! !
-!DOCPackageRenderer categoriesFor: #printClassLinkOf:on:!private! !
-!DOCPackageRenderer categoriesFor: #renderPackageClasses:params:on:!public! !
-!DOCPackageRenderer categoriesFor: #renderPackageComment:params:on:!public! !
-!DOCPackageRenderer categoriesFor: #renderPackageDependencies:params:on:!public! !
-!DOCPackageRenderer categoriesFor: #renderPackageDependents:params:on:!public! !
-!DOCPackageRenderer categoriesFor: #renderPackageName:params:on:!public! !
-!DOCPackageRenderer categoriesFor: #renderPackageTable:tableClass:colClass:on:!private! !
+!STDocPackageRenderer categoriesFor: #availableCommands!public! !
+!STDocPackageRenderer categoriesFor: #printClassLinkOf:on:!private! !
+!STDocPackageRenderer categoriesFor: #renderPackageClasses:params:on:!public! !
+!STDocPackageRenderer categoriesFor: #renderPackageComment:params:on:!public! !
+!STDocPackageRenderer categoriesFor: #renderPackageDependencies:params:on:!public! !
+!STDocPackageRenderer categoriesFor: #renderPackageDependents:params:on:!public! !
+!STDocPackageRenderer categoriesFor: #renderPackageName:params:on:!public! !
+!STDocPackageRenderer categoriesFor: #renderPackageTable:tableClass:colClass:on:!private! !
 
-!DOCPackageRenderer class methodsFor!
+!STDocPackageRenderer class methodsFor!
 
 rendererName
 	"This is a custom name used to identify the renderer in the xml code, each renderer must have it's own name"
 
 	^'package'! !
-!DOCPackageRenderer class categoriesFor: #rendererName!public! !
+!STDocPackageRenderer class categoriesFor: #rendererName!public! !
 
-DOCTextRenderer guid: (GUID fromString: '{CAD47FF8-F359-48CA-BCBD-D48F6366B016}')!
-DOCTextRenderer comment: ''!
-!DOCTextRenderer categoriesForClass!Unclassified! !
-!DOCTextRenderer methodsFor!
+STDocTextRenderer guid: (GUID fromString: '{cad47ff8-f359-48ca-bcbd-d48f6366b016}')!
+STDocTextRenderer comment: ''!
+!STDocTextRenderer categoriesForClass!Unclassified! !
+!STDocTextRenderer methodsFor!
 
 possibleChildTypes
 	"Returns a Set of classes of renderers that can be childs of this type of renderer"
 
 	^(super possibleChildTypes)
-		add: DOCIndexRenderer;
-		add: DOCClassRenderer;
-		add: DOCMethodRenderer;
-		add: DOCVariableRenderer;
+		add: STDocIndexRenderer;
+		add: STDocClassRenderer;
+		add: STDocMethodRenderer;
+		add: STDocVariableRenderer;
 		yourself! !
-!DOCTextRenderer categoriesFor: #possibleChildTypes!public! !
+!STDocTextRenderer categoriesFor: #possibleChildTypes!public! !
 
-!DOCTextRenderer class methodsFor!
+!STDocTextRenderer class methodsFor!
 
 rendererName
 	"This is a custom name used to identify the renderer in the xml code, each renderer must have it's own name"
 
 	^'text'! !
-!DOCTextRenderer class categoriesFor: #rendererName!public! !
+!STDocTextRenderer class categoriesFor: #rendererName!public! !
 
-DOCClassRenderer guid: (GUID fromString: '{0C4741F2-F128-4994-B58D-A58EB2BEFB28}')!
-DOCClassRenderer comment: ''!
-!DOCClassRenderer categoriesForClass!Unclassified! !
-!DOCClassRenderer methodsFor!
+STDocClassRenderer guid: (GUID fromString: '{0c4741f2-f128-4994-b58d-a58eb2befb28}')!
+STDocClassRenderer comment: ''!
+!STDocClassRenderer categoriesForClass!Unclassified! !
+!STDocClassRenderer methodsFor!
 
 availableCommands
 	"The available renderers that can be used to render objects
@@ -3544,9 +3552,9 @@ possibleChildTypes
 	"Returns a Set of classes of renderers that can be childs of this type of renderer"
 
 	^(super possibleChildTypes)
-		add: DOCClassRenderer;
-		add: DOCMethodRenderer;
-		add: DOCVariableRenderer;
+		add: STDocClassRenderer;
+		add: STDocMethodRenderer;
+		add: STDocVariableRenderer;
 		yourself!
 
 renderClassComment: aClass params: params on: aStream
@@ -3557,7 +3565,7 @@ renderClassComment: aClass params: params on: aStream
 	@param aStream the stream where you are going to render the result"
 
 	params notEmpty ifTrue: [aStream nextPutAll: params first].
-	DOCSUtils makeHTMLString: aClass docComment fullComment on: aStream!
+	STDocUtil makeHTMLString: aClass docComment fullComment on: aStream!
 
 renderClassDefinition: aClass params: params on: aStream
 	"Renders the class definition on the stream.
@@ -3614,7 +3622,7 @@ renderClassID: aClass params: params on: aStream
 	@param params parameters for the render command
 	@param aStream the stream where you are going to render the class name"
 
-	aStream nextPutAll: (DOCSUtils makeIDString: aClass name asString)!
+	aStream nextPutAll: (STDocUtil makeIDString: aClass name asString)!
 
 renderClassName: aClass params: params on: aStream
 	"Renders the class name on the stream.
@@ -3675,29 +3683,29 @@ renderClassSuperclasses: aClass params: params on: aStream
 				nextPutAll: '</b><br />';
 				cr.
 			spaces := spaces , '&nbsp;&nbsp;&nbsp;']! !
-!DOCClassRenderer categoriesFor: #availableCommands!public! !
-!DOCClassRenderer categoriesFor: #possibleChildTypes!public! !
-!DOCClassRenderer categoriesFor: #renderClassComment:params:on:!public! !
-!DOCClassRenderer categoriesFor: #renderClassDefinition:params:on:!public! !
-!DOCClassRenderer categoriesFor: #renderClassHierarchy:params:on:!public! !
-!DOCClassRenderer categoriesFor: #renderClassID:params:on:!public! !
-!DOCClassRenderer categoriesFor: #renderClassName:params:on:!public! !
-!DOCClassRenderer categoriesFor: #renderClassPackage:params:on:!public! !
-!DOCClassRenderer categoriesFor: #renderClassSuperclass:params:on:!public! !
-!DOCClassRenderer categoriesFor: #renderClassSuperclasses:params:on:!public! !
+!STDocClassRenderer categoriesFor: #availableCommands!public! !
+!STDocClassRenderer categoriesFor: #possibleChildTypes!public! !
+!STDocClassRenderer categoriesFor: #renderClassComment:params:on:!public! !
+!STDocClassRenderer categoriesFor: #renderClassDefinition:params:on:!public! !
+!STDocClassRenderer categoriesFor: #renderClassHierarchy:params:on:!public! !
+!STDocClassRenderer categoriesFor: #renderClassID:params:on:!public! !
+!STDocClassRenderer categoriesFor: #renderClassName:params:on:!public! !
+!STDocClassRenderer categoriesFor: #renderClassPackage:params:on:!public! !
+!STDocClassRenderer categoriesFor: #renderClassSuperclass:params:on:!public! !
+!STDocClassRenderer categoriesFor: #renderClassSuperclasses:params:on:!public! !
 
-!DOCClassRenderer class methodsFor!
+!STDocClassRenderer class methodsFor!
 
 rendererName
 	"This is a custom name used to identify the renderer in the xml code, each renderer must have it's own name"
 
 	^'class'! !
-!DOCClassRenderer class categoriesFor: #rendererName!public! !
+!STDocClassRenderer class categoriesFor: #rendererName!public! !
 
-DOCMethodRenderer guid: (GUID fromString: '{C8C1537F-E0CC-4838-A084-8B97C141CDA6}')!
-DOCMethodRenderer comment: ''!
-!DOCMethodRenderer categoriesForClass!Unclassified! !
-!DOCMethodRenderer methodsFor!
+STDocMethodRenderer guid: (GUID fromString: '{c8c1537f-e0cc-4838-a084-8b97c141cda6}')!
+STDocMethodRenderer comment: ''!
+!STDocMethodRenderer categoriesForClass!Unclassified! !
+!STDocMethodRenderer methodsFor!
 
 availableCommands
 	"The available renderers that can be used to render objects
@@ -3800,7 +3808,7 @@ renderMethodLargeComment: aMethod params: params on: aStream
 
 	"aStream nextPutAll: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'."
 
-	DOCSUtils makeHTMLString: aMethod comment fullComment on: aStream!
+	STDocUtil makeHTMLString: aMethod comment fullComment on: aStream!
 
 renderMethodName: aMethod params: params on: aStream
 	"Renders the method name.
@@ -3873,7 +3881,7 @@ renderMethodParams: aMethod params: params on: aStream
 			[:string |
 			| name stream |
 			stream := string readStream.
-			name := DOCSUtils firstWordOf: stream.
+			name := STDocUtil firstWordOf: stream.
 			aStream
 				nextPutAll: '<tr><td border="0" style="width:12px"';
 				nextPutAll: colStyle;
@@ -3923,7 +3931,7 @@ renderMethodSmallComment: aMethod params: params on: aStream
 	@param params parameters for the render command
 	@param aStream the stream where you are going to render"
 
-	DOCSUtils makeHTMLString: aMethod comment smallComment on: aStream!
+	STDocUtil makeHTMLString: aMethod comment smallComment on: aStream!
 
 searchOverrideClassOf: aMethod
 	| c |
@@ -3944,36 +3952,36 @@ setCommentsOf: method
 							[:docCls |
 							(docCls searchMethod: method methodObject selector)
 								ifNotNil: [:met | method comment combine: met comment]]]]! !
-!DOCMethodRenderer categoriesFor: #availableCommands!public! !
-!DOCMethodRenderer categoriesFor: #getObjectsOf:!private! !
-!DOCMethodRenderer categoriesFor: #isTrue:of:!public! !
-!DOCMethodRenderer categoriesFor: #methodID:on:!private! !
-!DOCMethodRenderer categoriesFor: #parseNode:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodAccess:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodCategories:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodClass:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodID:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodLargeComment:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodName:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodOverride:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodParams:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodReturn:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #renderMethodSmallComment:params:on:!public! !
-!DOCMethodRenderer categoriesFor: #searchOverrideClassOf:!private! !
-!DOCMethodRenderer categoriesFor: #setCommentsOf:!private! !
+!STDocMethodRenderer categoriesFor: #availableCommands!public! !
+!STDocMethodRenderer categoriesFor: #getObjectsOf:!private! !
+!STDocMethodRenderer categoriesFor: #isTrue:of:!public! !
+!STDocMethodRenderer categoriesFor: #methodID:on:!private! !
+!STDocMethodRenderer categoriesFor: #parseNode:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodAccess:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodCategories:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodClass:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodID:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodLargeComment:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodName:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodOverride:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodParams:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodReturn:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #renderMethodSmallComment:params:on:!public! !
+!STDocMethodRenderer categoriesFor: #searchOverrideClassOf:!private! !
+!STDocMethodRenderer categoriesFor: #setCommentsOf:!private! !
 
-!DOCMethodRenderer class methodsFor!
+!STDocMethodRenderer class methodsFor!
 
 rendererName
 	"This is a custom name used to identify the renderer in the xml code, each renderer must have it's own name"
 
 	^'method'! !
-!DOCMethodRenderer class categoriesFor: #rendererName!public! !
+!STDocMethodRenderer class categoriesFor: #rendererName!public! !
 
-DOCVariableRenderer guid: (GUID fromString: '{49B74884-0F99-4FB4-9E50-3555950F3C6A}')!
-DOCVariableRenderer comment: ''!
-!DOCVariableRenderer categoriesForClass!Unclassified! !
-!DOCVariableRenderer methodsFor!
+STDocVariableRenderer guid: (GUID fromString: '{49b74884-0f99-4fb4-9e50-3555950f3c6a}')!
+STDocVariableRenderer comment: ''!
+!STDocVariableRenderer categoriesForClass!Unclassified! !
+!STDocVariableRenderer methodsFor!
 
 availableCommands
 	"The available renderers that can be used to render objects
@@ -4025,7 +4033,7 @@ renderVarID: aVariable params: params on: aStream
 	@param params parameters for the render command
 	@param aStream the stream where you are going to render"
 
-	aStream nextPutAll: (DOCSUtils makeIDString: aVariable name displayString)!
+	aStream nextPutAll: (STDocUtil makeIDString: aVariable name displayString)!
 
 renderVarName: aVariable params: params on: aStream
 	"Renders the variable name.
@@ -4046,24 +4054,21 @@ renderVarType: aVariable params: params on: aStream
 	aStream nextPutAll: (aVariable isClass
 				ifTrue: ['C']
 				ifFalse: [aVariable isInst ifTrue: ['I'] ifFalse: ['IC']])! !
-!DOCVariableRenderer categoriesFor: #availableCommands!public! !
-!DOCVariableRenderer categoriesFor: #getObjectsOf:!private! !
-!DOCVariableRenderer categoriesFor: #parseNode:!public! !
-!DOCVariableRenderer categoriesFor: #renderVarComment:params:on:!public! !
-!DOCVariableRenderer categoriesFor: #renderVarID:params:on:!public! !
-!DOCVariableRenderer categoriesFor: #renderVarName:params:on:!public! !
-!DOCVariableRenderer categoriesFor: #renderVarType:params:on:!public! !
+!STDocVariableRenderer categoriesFor: #availableCommands!public! !
+!STDocVariableRenderer categoriesFor: #getObjectsOf:!private! !
+!STDocVariableRenderer categoriesFor: #parseNode:!public! !
+!STDocVariableRenderer categoriesFor: #renderVarComment:params:on:!public! !
+!STDocVariableRenderer categoriesFor: #renderVarID:params:on:!public! !
+!STDocVariableRenderer categoriesFor: #renderVarName:params:on:!public! !
+!STDocVariableRenderer categoriesFor: #renderVarType:params:on:!public! !
 
-!DOCVariableRenderer class methodsFor!
+!STDocVariableRenderer class methodsFor!
 
 rendererName
 	"This is a custom name used to identify the renderer in the xml code, each renderer must have it's own name"
 
 	^'variable'! !
-!DOCVariableRenderer class categoriesFor: #rendererName!public! !
+!STDocVariableRenderer class categoriesFor: #rendererName!public! !
 
-DOCParseError guid: (GUID fromString: '{B4569EAA-ABD3-4562-B3C7-5AF2A2B3221D}')!
-DOCParseError comment: ''!
-!DOCParseError categoriesForClass!Unclassified! !
 "Binary Globals"!
 

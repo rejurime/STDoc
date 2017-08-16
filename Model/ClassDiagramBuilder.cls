@@ -1,11 +1,11 @@
 "Filed out from Dolphin Smalltalk 7"!
 
-DOCObject subclass: #ClassDiagramBuilder
+STDocObject subclass: #ClassDiagramBuilder
 	instanceVariableNames: 'subjectClass methods classMethods outFile templateFile renderSuperclasses'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-ClassDiagramBuilder guid: (GUID fromString: '{69F10040-C125-4CB3-9967-4D89253F3D69}')!
+ClassDiagramBuilder guid: (GUID fromString: '{69f10040-c125-4cb3-9967-4d89253f3d69}')!
 ClassDiagramBuilder comment: ''!
 !ClassDiagramBuilder categoriesForClass!Unclassified! !
 !ClassDiagramBuilder methodsFor!

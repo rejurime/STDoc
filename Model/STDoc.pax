@@ -30,36 +30,36 @@ package imageStripperBytes: (ByteArray fromBase64String: 'IVNUQiAxIAAAAAA=').
 
 package classNames
 	add: #ClassDiagramBuilder;
-	add: #DOCAnd;
-	add: #DOCClass;
-	add: #DOCClassRenderer;
-	add: #DOCClassTemplate;
-	add: #DOCClassTemplateRenderer;
-	add: #DOCComment;
-	add: #DOCCondCmd;
-	add: #DOCCondition;
-	add: #DOCConfig;
-	add: #DOCDefaultProcessor;
-	add: #DOCIndexRenderer;
-	add: #DOCIndexTemplate;
-	add: #DOCMethod;
-	add: #DOCMethodRenderer;
-	add: #DOCObject;
-	add: #DOCOr;
-	add: #DOCPackageRenderer;
-	add: #DOCPackageTemplate;
-	add: #DOCParseError;
-	add: #DOCPredefinedCond;
-	add: #DOCProcessor;
-	add: #DOCRenderCmd;
-	add: #DOCRenderer;
-	add: #DOCSmalltalkManager;
-	add: #DOCSUtils;
-	add: #DOCTemplateSpec;
-	add: #DOCTextCmd;
-	add: #DOCTextRenderer;
-	add: #DOCVariable;
-	add: #DOCVariableRenderer;
+	add: #STDocAnd;
+	add: #STDocClass;
+	add: #STDocClassRenderer;
+	add: #STDocClassTemplate;
+	add: #STDocClassTemplateRenderer;
+	add: #STDocComment;
+	add: #STDocCondCmd;
+	add: #STDocCondition;
+	add: #STDocConfig;
+	add: #STDocDefaultProcessor;
+	add: #STDocIndexRenderer;
+	add: #STDocIndexTemplate;
+	add: #STDocMethod;
+	add: #STDocMethodRenderer;
+	add: #STDocObject;
+	add: #STDocOr;
+	add: #STDocPackageRenderer;
+	add: #STDocPackageTemplate;
+	add: #STDocParseError;
+	add: #STDocPredefinedCond;
+	add: #STDocProcessor;
+	add: #STDocRenderCmd;
+	add: #STDocRenderer;
+	add: #STDocSmalltalkManager;
+	add: #STDocTemplateSpec;
+	add: #STDocTextCmd;
+	add: #STDocTextRenderer;
+	add: #STDocUtil;
+	add: #STDocVariable;
+	add: #STDocVariableRenderer;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -77,158 +77,158 @@ package!
 
 "Class Definitions"!
 
-Object subclass: #DOCObject
+Object subclass: #STDocObject
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #ClassDiagramBuilder
+Error subclass: #STDocParseError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+STDocObject subclass: #ClassDiagramBuilder
 	instanceVariableNames: 'subjectClass methods classMethods outFile templateFile renderSuperclasses'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCClass
+STDocObject subclass: #STDocClass
 	instanceVariableNames: 'manager classObject classMethods methods variables classVariables instanceClassVariables docComment superClasses subClasses'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCComment
+STDocObject subclass: #STDocComment
 	instanceVariableNames: 'comment attrTable fullComment smallComment combined'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCCondition
+STDocObject subclass: #STDocCondition
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCConfig
+STDocObject subclass: #STDocConfig
 	instanceVariableNames: 'renderPrivate renderPublic renderClassPublic renderClassPrivate templateName listeners templateDir docPath renderSuperclasses renderRelatedClasses renderClassAccessor renderAccessors'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCMethod
+STDocObject subclass: #STDocMethod
 	instanceVariableNames: 'comment methodObject definition id'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCProcessor
+STDocObject subclass: #STDocProcessor
 	instanceVariableNames: 'manager fileName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCRenderCmd
+STDocObject subclass: #STDocRenderCmd
 	instanceVariableNames: 'renderer'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCRenderer
+STDocObject subclass: #STDocRenderer
 	instanceVariableNames: 'manager headerCommands bodyCommands footerCommands childRenderers parent'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCSmalltalkManager
+STDocObject subclass: #STDocSmalltalkManager
 	instanceVariableNames: 'config processors configKeys progress defaultStyle privIcon pubIcon overIcon classIcon blankIcon classes stClassSet packages'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCSUtils
+STDocObject subclass: #STDocUtil
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCObject subclass: #DOCVariable
+STDocObject subclass: #STDocVariable
 	instanceVariableNames: 'name docClass type'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCCondition subclass: #DOCAnd
+STDocCondition subclass: #STDocAnd
 	instanceVariableNames: 'conditions'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCCondition subclass: #DOCOr
+STDocCondition subclass: #STDocOr
 	instanceVariableNames: 'conditions'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCCondition subclass: #DOCPredefinedCond
+STDocCondition subclass: #STDocPredefinedCond
 	instanceVariableNames: 'renderer condition'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCProcessor subclass: #DOCClassTemplate
+STDocProcessor subclass: #STDocClassTemplate
 	instanceVariableNames: 'renderers outDir'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCProcessor subclass: #DOCDefaultProcessor
+STDocProcessor subclass: #STDocDefaultProcessor
 	instanceVariableNames: 'renderers outFile'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCProcessor subclass: #DOCIndexTemplate
+STDocProcessor subclass: #STDocIndexTemplate
 	instanceVariableNames: 'hierarchy renderers'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCProcessor subclass: #DOCTemplateSpec
+STDocProcessor subclass: #STDocTemplateSpec
 	instanceVariableNames: 'filesToCopy'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCClassTemplate subclass: #DOCPackageTemplate
+STDocClassTemplate subclass: #STDocPackageTemplate
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderCmd subclass: #DOCCondCmd
+STDocRenderCmd subclass: #STDocCondCmd
 	instanceVariableNames: 'trueCommands falseCommands condition'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderCmd subclass: #DOCTextCmd
+STDocRenderCmd subclass: #STDocTextCmd
 	instanceVariableNames: 'name params'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderer subclass: #DOCClassTemplateRenderer
+STDocRenderer subclass: #STDocClassTemplateRenderer
 	instanceVariableNames: 'header footer'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderer subclass: #DOCIndexRenderer
+STDocRenderer subclass: #STDocIndexRenderer
 	instanceVariableNames: 'type fileName'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderer subclass: #DOCPackageRenderer
+STDocRenderer subclass: #STDocPackageRenderer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCRenderer subclass: #DOCTextRenderer
+STDocRenderer subclass: #STDocTextRenderer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCClassTemplateRenderer subclass: #DOCClassRenderer
+STDocClassTemplateRenderer subclass: #STDocClassRenderer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCClassTemplateRenderer subclass: #DOCMethodRenderer
+STDocClassTemplateRenderer subclass: #STDocMethodRenderer
 	instanceVariableNames: 'methodType'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-DOCClassTemplateRenderer subclass: #DOCVariableRenderer
+STDocClassTemplateRenderer subclass: #STDocVariableRenderer
 	instanceVariableNames: 'varType'
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
-Error subclass: #DOCParseError
-	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
